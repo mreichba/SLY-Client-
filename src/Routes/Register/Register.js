@@ -12,7 +12,7 @@ export default class Register extends React.Component {
     }
   };
 
-  onSuccessfulLogin = () => {
+  onSuccessfulRegistration = () => {
     const { history } = this.props;
     history.push('/Login');
   };
@@ -28,7 +28,7 @@ export default class Register extends React.Component {
       Password: Password.value
     };
     AuthService.postUser(newUser)
-      .then(this.onSuccessfulLogin())
+      .then(this.onSuccessfulRegistration())
       .catch(err => this.context.setError(err));
   };
 
