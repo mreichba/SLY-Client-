@@ -6,11 +6,13 @@ import Login from './Routes/Login/Login';
 import Register from './Routes/Register/Register';
 import Boundary from './Routes/Boundary/Boundary';
 import { ContextProvider } from './Components/Context/Context';
+import Nav from './Components/Nav/Nav'
 
 class App extends React.Component {
   render() {
     return (
       <div className='App'>
+        <Nav />
         <ContextProvider>
           <Switch>
             <Route
