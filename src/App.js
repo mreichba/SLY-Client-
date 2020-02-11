@@ -5,6 +5,7 @@ import Landing from './Routes/Landing/Landing';
 import Login from './Routes/Login/Login';
 import Register from './Routes/Register/Register';
 import Boundary from './Routes/Boundary/Boundary';
+import Functionality from './Components/Questionnaire/Functionality';
 import { ContextProvider } from './Components/Context/Context';
 
 class App extends React.Component {
@@ -14,16 +15,29 @@ class App extends React.Component {
         <ContextProvider>
           <Switch>
             <Route
+              exact
+              path='/'
               render={routeProps => {
                 return <Landing {...routeProps} />;
               }}
             />
             <Route
+              exact
+              path='/Quiz'
+              render={routeProps => {
+                return <Functionality {...routeProps} />;
+              }}
+            />
+            <Route
+              exact
+              path='/Login'
               render={routeProps => {
                 return <Login {...routeProps} />;
               }}
             />
             <Route
+              exact
+              path='/Register'
               render={routeProps => {
                 return <Register {...routeProps} />;
               }}
