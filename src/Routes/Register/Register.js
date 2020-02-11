@@ -8,7 +8,7 @@ export default class Register extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -54,7 +54,7 @@ export default class Register extends React.Component {
 
           <div>
             <button type='submit'>Create</button>
-            <Link to='/Login'>Already a user?</Link>
+            <Link to='/Login' className='existing'>Already a user?</Link>
           </div>
         </form>
       </div>

@@ -4,12 +4,12 @@ import TokenService from '../../Helpers/TokenService';
 import IdleService from '../../Helpers/IdleService';
 
 const Context = React.createContext({
-  processLogin: () => {},
-  processLogout: () => {},
-  setUser: () => {},
+  processLogin: () => { },
+  processLogout: () => { },
+  setUser: () => { },
   currentUser: {},
-  setError: () => {},
-  clearError: () => {},
+  setError: () => { },
+  clearError: () => { },
   error: null
 });
 

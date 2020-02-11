@@ -3,12 +3,13 @@ import './Login.css';
 import { Link } from 'react-router-dom';
 import AuthService from '../../Helpers/AuthService';
 import Context from '../../Components/Context/Context';
+import './Login.css';
 
 export default class Login extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -42,7 +43,7 @@ export default class Login extends React.Component {
 
           <div>
             <button type='submit'>Login</button>
-            <Link to='/Register'>New user?</Link>
+            <Link to='/Register' class='new'>New user?</Link>
           </div>
         </form>
       </div>
