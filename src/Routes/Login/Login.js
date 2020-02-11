@@ -32,7 +32,7 @@ export default class Login extends React.Component {
   render() {
     return (
       <div className='Login'>
-        <p>{this.context.error() ? this.context.error : ''}</p>
+        <p>{this.context.error ? this.context.error : ''}</p>
         <form onSubmit={this.onLogin}>
           <label for='Username'>Username</label>
           <input name='Username' type='text' required />

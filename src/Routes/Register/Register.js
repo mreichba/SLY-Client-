@@ -35,7 +35,7 @@ export default class Register extends React.Component {
   render() {
     return (
       <div className='Register'>
-        <p>{this.context.error() ? this.context.error : ''}</p>
+        <p>{this.context.error ? this.context.error : ''}</p>
         <form onSubmit={this.onLogin}>
           <label for='FirstName'>First Name</label>
           <input type='text' required name='FirstName' />

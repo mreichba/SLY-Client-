@@ -14,16 +14,22 @@ class App extends React.Component {
         <ContextProvider>
           <Switch>
             <Route
+              exact
+              path='/'
               render={routeProps => {
                 return <Landing {...routeProps} />;
               }}
             />
             <Route
+              exact
+              path='/Login'
               render={routeProps => {
                 return <Login {...routeProps} />;
               }}
             />
             <Route
+              exact
+              path='/Register'
               render={routeProps => {
                 return <Register {...routeProps} />;
               }}
