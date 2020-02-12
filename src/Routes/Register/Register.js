@@ -8,15 +8,21 @@ export default class Register extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => { }
+      push: () => {}
     }
   };
 
+  // if the user's account creation inputs are vaild and the account is created without error
+  // the app will push the user to the login route so the user can login to their new account
   onSuccessfulRegistration = () => {
     const { history } = this.props;
     history.push('/Login');
   };
 
+  // when a user clicks create the app takes the user's inputed values and makes api call to check
+  // if the values are valid if so then the api will create the account in the database and then
+  // the app will push the user to the login route if the values are invalid then the app will display
+  // which of the inputed values were invalid to help the user
   onLogin = ev => {
     ev.preventDefault();
     const { FirstName, LastName, Email, Username, Password } = ev.target;
@@ -54,7 +60,9 @@ export default class Register extends React.Component {
 
           <div>
             <button type='submit'>Create</button>
-            <Link to='/Login' className='existing'>Already a user?</Link>
+            <Link to='/Login' className='existing'>
+              Already a user?
+            </Link>
           </div>
         </form>
       </div>

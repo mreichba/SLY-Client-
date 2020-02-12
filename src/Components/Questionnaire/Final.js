@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default class Final extends React.Component {
+  // submits the user's final answers to the database to save to the user's account
   submit = ev => {
     ev.preventDefault();
     console.log(this.props.values);
