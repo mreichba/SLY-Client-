@@ -17,16 +17,19 @@ export default class Questionnaire extends React.Component {
     };
   }
 
+  // increments the step counter in state so the switch statement will render the next component
   next = ev => {
     ev.preventDefault();
     this.setState({ step: this.state.step + 1 });
   };
 
+  // decrements the step counter in state so the switch statement will render the previous component
   prev = ev => {
     ev.preventDefault();
     this.setState({ step: this.state.step - 1 });
   };
 
+  // updates the state with the user's current answers
   handleChange = input => ev => {
     this.setState({ [input]: ev.target.value });
   };
