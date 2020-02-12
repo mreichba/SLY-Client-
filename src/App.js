@@ -23,13 +23,6 @@ class App extends React.Component {
             />
             <Route
               exact
-              path='/Quiz'
-              render={routeProps => {
-                return <Functionality {...routeProps} />;
-              }}
-            />
-            <Route
-              exact
               path='/Login'
               render={routeProps => {
                 return <Login {...routeProps} />;
