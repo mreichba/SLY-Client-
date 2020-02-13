@@ -9,15 +9,19 @@ export default class Login extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => { }
+      push: () => {}
     }
   };
 
+  // when a user successfully logs in the app will push them to the app's dashboard
   onSuccessfulRegistration = () => {
     const { history } = this.props;
     history.push('/');
   };
 
+  // when a user clicks login the app takes the users login credentials and makes a api call
+  // to check if credentials are valid if they're it will log the user in and push them to the dashboard
+  // if the credentials are invalid then it will display an error to inform the user
   onLogin = ev => {
     ev.preventDefault();
     const { Username, Password } = ev.target;
@@ -44,6 +48,7 @@ export default class Login extends React.Component {
           <div>
             <button type='submit' className='Login_button'>Login</button>
             <Link to='/Register' className='new'>New user?</Link>
+
           </div>
         </form>
       </div>
