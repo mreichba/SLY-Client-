@@ -49,10 +49,7 @@ class Dashboard extends React.Component {
         <div className="dashboardContainer">
   
           <h2>Welcome back, {this.props.user.user.name}!
-          <br />
-          Language: {this.context.language.name }
-          <br />
-          Total correct answers: {this.context.language.total_score} </h2>
+          </h2>
   
           <Link to='/learn'>
           <button>Start practicing</button>
