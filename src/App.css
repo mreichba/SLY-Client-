@@ -1,8 +1,23 @@
 .App {
   text-align: center;
+  color: rgb(28, 11, 56);
 }
 
-.App-logo {
+html {
+  background-color: rgb(177, 198, 211);
+  margin-top: 60px;
+  background-image: url(./Media/SLY-Background.jpg);
+}
+
+label {
+  display: block;
+}
+
+input {
+  margin: 0 0 10px;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +50,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

@@ -39,17 +39,16 @@ export default class Login extends React.Component {
       <div className='Login'>
         <p>{this.context.error ? this.context.error : ''}</p>
         <form onSubmit={this.onLogin}>
-          <label for='Username'>Username</label>
-          <input name='Username' type='text' required />
+          <label htmlFor='Username'>Username</label>
+          <input className='Username' type='text' required />
 
-          <label for='Password'>Password</label>
-          <input type='password' required name='Password' />
+          <label htmlFor='Password'>Password</label>
+          <input type='password' required className='Password' />
 
           <div>
-            <button type='submit'>Login</button>
-            <Link to='/Register' class='new'>
-              New user?
-            </Link>
+            <button type='submit' className='Login_button'>Login</button>
+            <Link to='/Register' className='new'>New user?</Link>
+
           </div>
         </form>
       </div>
