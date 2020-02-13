@@ -1,3 +1,20 @@
-.Landing {
-  margin: 60px 0 0;
+h1 {
+  font-family: 'Galada', cursive;
+}
+
+button {
+  background-color: rgb(28, 11, 56);
+  border: black;
+  color: white;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.mission {
+  max-width: 500px;
+  margin: 0 auto 30px;
 }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import TokenService from '../../Helpers/TokenService'
 import Context from '../Context/Context'
 import './Nav.css'
+import Logo from '../../Media/sly-logo.PNG'
 
 class Nav extends Component {
   static contextType = Context
@@ -47,6 +48,7 @@ class Nav extends Component {
   renderLoginLink() {
     return (
       <nav>
+        <img src={Logo} alt='sly logo' className='navLogo' />
         <div role="navigation" className="burgerIcon" id="burger" onClick={this.burgerClick}> &#9776; </div>
         <ul aria-live="polite" className="links null" id="links" onClick={this.burgerClick}>
           <li><Link to='/Login'>Login</Link></li>
