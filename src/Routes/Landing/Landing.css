@@ -1,15 +1,15 @@
-h1 {
+.landing_h1 {
   font-family: 'Galada', cursive;
 }
 
-button {
+.landing_button {
   background-color: rgb(28, 11, 56);
   border: hotpink 1px solid;
   color: white;
   border-radius: 5px;
 }
 
-button a {
+.landing_button a {
   color: white;
   text-decoration: none;
   font-size: 20px;

@@ -1,18 +1,13 @@
 
-
-label {
-  display: block;
-}
-
-input {
-  margin: 0 0 10px;
-}
-
 .new {
   color: blue;
 }
 
-button {
+.Login_button{
+  background-color: rgb(28, 11, 56);
+  border: hotpink 1px solid;
+  color: white;
+  border-radius: 5px;
   display: block;
   margin: 10px auto 20px;
   font-size: 20px;
