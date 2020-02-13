@@ -7,6 +7,7 @@ import Register from './Routes/Register/Register';
 import Boundary from './Routes/Boundary/Boundary';
 import { ContextProvider } from './Components/Context/Context';
 import Nav from './Components/Nav/Nav';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 
 class App extends React.Component {
