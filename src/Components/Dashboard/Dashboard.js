@@ -3,6 +3,8 @@ import SideBar from './sidebar';
 
 import './Dashboard.css';
 
+// note still have work to do, working on implementing the side bar
+// and main questionnaire area, used some code from last capstone as starter
 export default function Dashboard() {
   return (
     <div id="Dashboard">
