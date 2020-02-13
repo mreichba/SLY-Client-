@@ -42,8 +42,12 @@ class Dashboard extends React.Component {
     console.log(this.context)
     return (
       <div className="dashboardContainer">
-
-        <h2>Welcome back, {this.context.currentUser}!
+        <SideBar className='sideBar' />
+        <div id="page-wrap">
+          <h1>AppDividend</h1>
+          <h2>Check out our tutorials the side menubar</h2>
+        </div>
+        {/* <h2>Welcome back, {this.context.currentUser}!
           </h2>
 
         <Link to='/learn'>
@@ -52,7 +56,7 @@ class Dashboard extends React.Component {
         <div className="infoArea">
           <div className="infoHeader"><h3>Next Question</h3></div>
 
-        </div>
+        </div> */}
       </div>
     )
   }

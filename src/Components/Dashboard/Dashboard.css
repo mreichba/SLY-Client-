@@ -1,11 +1,7 @@
-html,
-body {
-  margin: 0;
-}
 
-#App {
+.dashboardContainer {
   font-family: sans-serif;
-  height: 100vh;
+  height: 110%;
 }
 
 #page-wrap {
@@ -29,8 +25,8 @@ body {
   position: fixed;
   width: 36px;
   height: 30px;
-  left: 36px;
-  top: 36px;
+  right: 20px;
+  top: 60px;
 }
 
 .bm-burger-bars {
@@ -47,13 +43,10 @@ body {
 }
 
 .bm-menu {
-  background: #373a47;
+  background: rgb(28, 11, 56);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-}
-
-.bm-morph-shape {
-  fill: #373a47;
+  
 }
 
 .bm-item-list {

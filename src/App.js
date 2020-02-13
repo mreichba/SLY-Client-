@@ -39,6 +39,13 @@ class App extends React.Component {
               }}
             />
             <Route
+              exact
+              path='/Dashboard'
+              render={routeProps => {
+                return <Dashboard {...routeProps} />;
+              }}
+            />
+            <Route
               render={routeProps => {
                 return <Boundary {...routeProps} />;
               }}
