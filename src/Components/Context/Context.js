@@ -4,12 +4,12 @@ import TokenService from '../../Helpers/TokenService';
 import IdleService from '../../Helpers/IdleService';
 
 const Context = React.createContext({
-  processLogin: () => { },
-  processLogout: () => { },
-  setUser: () => { },
+  processLogin: () => {},
+  processLogout: () => {},
+  setUser: () => {},
   currentUser: {},
-  setError: () => { },
-  clearError: () => { },
+  setError: () => {},
+  clearError: () => {},
   error: null
 });
 
@@ -35,8 +35,10 @@ export class ContextProvider extends React.Component {
     IdleService.setIdleCallback(this.logoutBecauseIdle);
   }
 
+  // when the app mounts it checks if the user has a api token in their browsers local storage
   componentDidMount() {
     if (TokenService.hasAuthToken()) {
+      // sets expiration timer for the users api token
       IdleService.regiserIdleTimerResets();
       TokenService.queueCallbackBeforeExpiry(() => {
         this.fetchRefreshToken();
@@ -49,26 +51,33 @@ export class ContextProvider extends React.Component {
     TokenService.clearCallbackBeforeExpiry();
   }
 
+  // sets the error value when called
   setError = error => {
     console.error(error);
     this.setState({ error });
   };
 
+  // sets the error value in state back to null
   clearError = () => {
     this.setState({ error: null });
   };
 
+  // sets the current loggedin users data in state
   setUser = user => {
-    this.setState({ user });
+    this.setState({ currentUser: user });
   };
 
+  // when a user logs in this function is triggered and it saves the users api token
+  // to the user's brower local storage and stores the users data in state
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken);
     const jwtPayload = TokenService.parseAuthToken();
     this.setUser({
-      id: jwtPayload.user_id,
-      name: jwtPayload.name,
-      username: jwtPayload.sub
+      currentUser: {
+        id: jwtPayload.user_id,
+        name: jwtPayload.name,
+        username: jwtPayload.sub
+      }
     });
     IdleService.regiserIdleTimerResets();
     TokenService.queueCallbackBeforeExpiry(() => {
@@ -76,11 +85,13 @@ export class ContextProvider extends React.Component {
     });
   };
 
+  // when a user logs out this function is called and it clears the user's api token from
+  // their browsers local storage also it clears the value of currentUser in state
   processLogout = () => {
     TokenService.clearAuthToken();
     TokenService.clearCallbackBeforeExpiry();
     IdleService.unRegisterIdleResets();
-    this.setUser({});
+    this.setUser({ currentUser: {} });
   };
 
   logoutBecauseIdle = () => {
@@ -90,6 +101,7 @@ export class ContextProvider extends React.Component {
     this.setUser({ idle: true });
   };
 
+  // function that grabs the user's new unexpired api token and stores it in their browsers local storage
   fetchRefreshToken = () => {
     AuthService.refreshToken()
       .then(res => {

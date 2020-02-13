@@ -5,9 +5,8 @@ import Landing from './Routes/Landing/Landing';
 import Login from './Routes/Login/Login';
 import Register from './Routes/Register/Register';
 import Boundary from './Routes/Boundary/Boundary';
-import Functionality from './Components/Questionnaire/Functionality';
 import { ContextProvider } from './Components/Context/Context';
-import Nav from './Components/Nav/Nav'
+import Nav from './Components/Nav/Nav';
 
 
 class App extends React.Component {
