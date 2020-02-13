@@ -4,8 +4,9 @@ h1 {
 
 button {
   background-color: rgb(28, 11, 56);
-  border: black;
+  border: hotpink 1px solid;
   color: white;
+  border-radius: 5px;
 }
 
 button a {
