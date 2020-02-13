@@ -53,7 +53,7 @@ export default class Register extends React.Component {
           <input type='password' required name='Password' />
 
           <div>
-            <button type='submit'>Create Account</button>
+            <button type='submit' className='Reg_button'>Create Account</button>
             <Link to='/Login' className='existing'>Already a user?</Link>
           </div>
         </form>
