@@ -1,5 +1,5 @@
 nav {
-  background-color: black;
+  background-color: rgb(28, 11, 56);
   display: inline-block;
   justify-content: space-between;
   position: fixed;
@@ -44,12 +44,19 @@ nav {
 li {
   display: inline;
   text-align: right;
+  margin: 4px
 }
 
 li a {
-  padding: 8px;
+  padding: 4px;
   color: white;
   text-decoration: none;
+}
+
+.navLogo {
+  height: 40px;
+  width: auto;
+  float: left;
 }
 
 /*tablet screen*/
