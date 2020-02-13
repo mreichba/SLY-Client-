@@ -19,9 +19,9 @@ class Dashboard extends React.Component {
     constructor(props){
       super(props);
       
-      this.state = {
-        language: '',
-        words: ['Placeholder']
+    //   this.state = {
+    //     language: '',
+    //     words: ['Placeholder']
       }
     }
   
@@ -55,26 +55,8 @@ class Dashboard extends React.Component {
           <button>Start practicing</button>
             </Link>
           <div className="infoArea">
-            <div className="infoHeader"><h3>Words to practice</h3></div>
-            <div className="wordsHolder">
-              <div className="words">
-              <h4>{this.context.language.name || 'Language'}</h4>
-              <ul>
-                {this.context.words.map((word, index) => {
-                  return(
-                    <li key={index}><h4>
-                    {word.original}</h4>
-                    <div>
-                    correct answer count: {word.correct_count}<br />
-                    incorrect answer count: {word.incorrect_count}
-                    </div>
-                    </li>
-                  )
-                }) || this.state.words[0]}
-              </ul>
-              </div>
-              
-            </div>
+            <div className="infoHeader"><h3>Next Question</h3></div>
+            
           </div>
         </div>
       )
