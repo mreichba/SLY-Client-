@@ -8,7 +8,7 @@ export default class Register extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -41,6 +41,7 @@ export default class Register extends React.Component {
   render() {
     return (
       <div className='Register'>
+        <h1>Register</h1>
         <p>{this.context.error ? this.context.error : ''}</p>
         <form onSubmit={this.onLogin}>
           <label for='FirstName'>First Name</label>
