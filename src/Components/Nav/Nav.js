@@ -28,7 +28,7 @@ class Nav extends Component {
         <span className='userHeader'>
           {this.context.currentUser}
         </span>
-        <topNav>
+        <nav>
           <div role="navigation" className="burgerIcon" id="burger" onClick={this.burgerClick}> &#9776; </div>
           <ul aria-live="polite" className="links null" id="links" onClick={this.burgerClick}>
             <li>
@@ -40,14 +40,14 @@ class Nav extends Component {
               </Link>
             </li>
           </ul>
-        </topNav>
+        </nav>
       </div>
     )
   }
 
   renderLoginLink() {
     return (
-      <topNav>
+      <nav>
         <img src={Logo} alt='sly logo' className='navLogo' />
         <div role="navigation" className="burgerIcon" id="burger" onClick={this.burgerClick}> &#9776; </div>
         <ul aria-live="polite" className="links null" id="links" onClick={this.burgerClick}>
@@ -55,7 +55,7 @@ class Nav extends Component {
           {' '}
           <li><Link to='/Register'>Sign-Up</Link></li>
         </ul>
-      </topNav>
+      </nav>
     )
   }
 
