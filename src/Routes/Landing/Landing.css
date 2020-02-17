@@ -1,5 +1,10 @@
 .landing_h1 {
   font-family: 'Galada', cursive;
+  margin-bottom: 20px;
+}
+
+.accent{
+  color: rgb(88, 5, 88);
 }
 
 .landing_button {
@@ -7,6 +12,8 @@
   border: hotpink 1px solid;
   color: white;
   border-radius: 5px;
+  padding: 5px 20px;
+  margin-bottom: 30px;
 }
 
 .landing_button a {

@@ -11,9 +11,9 @@ export default class Questionnaire extends React.Component {
       step: 1,
       Age: '',
       Location: '',
-      Hobby: '',
-      MovieGenre: '',
-      MusicGenre: ''
+      Nationality: '',
+      Gender: '',
+      CollegeGraduate: ''
     };
   }
 
@@ -38,9 +38,9 @@ export default class Questionnaire extends React.Component {
     const values = {
       Age: this.state.Age,
       Location: this.state.Location,
-      Hobby: this.state.Hobby,
-      MovieGenre: this.state.MovieGenre,
-      MusicGenre: this.state.MusicGenre
+      Nationailty: this.state.Nationality,
+      Gender: this.state.Gender,
+      CollegeGraduate: this.state.CollegeGraduate
     };
 
     switch (this.state.step) {
