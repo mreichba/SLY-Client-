@@ -24,6 +24,11 @@ class Dashboard extends React.Component {
     }
   };
 
+  // toogles slide component open/close
+  toggleSlide = () => {
+    this.setState(prevState => ({ open: !prevState.open }));
+  };
+
   componentDidMount() {}
 
   render() {
@@ -31,7 +36,10 @@ class Dashboard extends React.Component {
       <div className='dashboardContainer'>
         <h1>Dashboard</h1>
         <div>
-          <SlideMenu open={this.state.open} />
+          <button onClick={this.toggleSlide}>
+            <i class='fas fa-chevron-left'></i>
+          </button>
+          <SlideMenu toggleSlide={this.toggleSlide} open={this.state.open} />
         </div>
 
         <h2>Welcome back, {this.context.user.name.toCapitilized}!</h2>
