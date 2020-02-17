@@ -1,4 +1,6 @@
-
+.reg-header{
+  margin-bottom: 30px;
+}
 
 .existing {
   color: blue;
@@ -11,5 +13,6 @@
   border-radius: 5px;
   display: block;
   margin: 10px auto 20px;
+  padding: 5px 20px;
   font-size: 20px;
 }

@@ -1,0 +1,39 @@
+.dash-header{
+  margin-bottom: 20px;
+  font-family: 'Galada', cursive;
+}
+
+.dash-welcome{
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.dash-menu {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  
+}
+
+.dash-slide{
+  background-color: rgb(28, 11, 56);
+  color: white;
+  border: hotpink 1px solid;
+  padding: 2px;
+}
+
+.dash-prac-button {
+    background-color: rgb(28, 11, 56);
+    border: hotpink 1px solid;
+    color: white;
+    border-radius: 5px;
+    display: block;
+    margin: 10px auto 20px;
+    font-size: 20px;
+    padding: 5px 20px;
+  }
+
+  .dash-prac-button a {
+    text-decoration: none;
+    color: white;
+  }
