@@ -4,7 +4,7 @@ import TokenService from './TokenService';
 const AuthService = {
   // api call used to create user accounts
   postUser(user) {
-    return fetch(`${config.API_ENDPOINT}/user`, {
+    return fetch(`${config.API_ENDPOINT}/users`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

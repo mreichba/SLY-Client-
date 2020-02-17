@@ -9,13 +9,12 @@ import { ContextProvider } from './Components/Context/Context';
 import Nav from './Components/Nav/Nav';
 import Dashboard from './Components/Dashboard/Dashboard';
 
-
 class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <Nav />
         <ContextProvider>
+          <Nav />
           <Switch>
             <Route
               exact
