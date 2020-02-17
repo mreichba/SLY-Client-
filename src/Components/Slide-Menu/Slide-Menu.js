@@ -32,7 +32,7 @@ export default class SlideMenu extends React.Component {
           this.props.open ? 'is-open' : 'is-closed'
           }`}
       >
-        <nav className={this.props.open}>
+        <div className={this.props.open}>
           <button className='Close-Menu' onClick={this.props.mobileToggle}>
             <i className='fas fa-times'></i>
           </button>
@@ -79,7 +79,7 @@ export default class SlideMenu extends React.Component {
               </button>
             </div>
           </div>
-        </nav>
+        </div>
       </div>
     );
   }
