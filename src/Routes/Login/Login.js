@@ -16,7 +16,7 @@ export default class Login extends React.Component {
   // when a user successfully logs in the app will push them to the app's dashboard
   onSuccessfulLogin = () => {
     const { history } = this.props;
-    history.push('/');
+    history.push('/Dashboard');
   };
 
   // when a user clicks login the app takes the users login credentials and makes a api call
