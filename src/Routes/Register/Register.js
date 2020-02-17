@@ -27,15 +27,13 @@ export default class Register extends React.Component {
     ev.preventDefault();
     const { FirstName, LastName, Email, Username, Password } = ev.target;
     const newUser = {
-      FirstName: FirstName.value,
-      LastName: LastName.value,
-      Email: Email.value,
-      Username: Username.value,
-      Password: Password.value
+      first_name: FirstName.value,
+      last_name: LastName.value,
+      email: Email.value,
+      username: Username.value,
+      password: Password.value
     };
-    AuthService.postUser(newUser)
-      .then(this.onSuccessfulRegistration())
-      .catch(err => this.context.setError(err));
+    AuthService.postUser(newUser).then(this.onSuccessfulRegistration());
   };
 
   render() {
@@ -59,8 +57,12 @@ export default class Register extends React.Component {
           <input type='password' required name='Password' />
 
           <div>
-            <button type='submit' className='Reg_button'>Create Account</button>
-            <Link to='/Login' className='existing'>Already a user?</Link>
+            <button type='submit' className='Reg_button'>
+              Create Account
+            </button>
+            <Link to='/Login' className='existing'>
+              Already a user?
+            </Link>
           </div>
         </form>
       </div>
