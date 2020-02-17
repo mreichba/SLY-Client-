@@ -7,14 +7,14 @@ import Register from './Routes/Register/Register';
 import Boundary from './Routes/Boundary/Boundary';
 import { ContextProvider } from './Components/Context/Context';
 import Nav from './Components/Nav/Nav';
-
+import Dashboard from './Components/Dashboard/Dashboard';
 
 class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <Nav />
         <ContextProvider>
+          <Nav />
           <Switch>
             <Route
               exact
@@ -35,6 +35,13 @@ class App extends React.Component {
               path='/Register'
               render={routeProps => {
                 return <Register {...routeProps} />;
+              }}
+            />
+            <Route
+              exact
+              path='/Dashboard'
+              render={routeProps => {
+                return <Dashboard {...routeProps} />;
               }}
             />
             <Route

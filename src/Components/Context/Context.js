@@ -7,7 +7,7 @@ const Context = React.createContext({
   processLogin: () => {},
   processLogout: () => {},
   setUser: () => {},
-  currentUser: {},
+  user: {},
   setError: () => {},
   clearError: () => {},
   error: null
@@ -19,14 +19,14 @@ export class ContextProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: {},
+      user: {},
       error: null
     };
 
     const jwtPayload = TokenService.parseAuthToken();
 
     if (jwtPayload)
-      this.state.currentUser = {
+      this.state.user = {
         id: jwtPayload.user_id,
         name: jwtPayload.name,
         username: jwtPayload.sub
@@ -64,7 +64,12 @@ export class ContextProvider extends React.Component {
 
   // sets the current loggedin users data in state
   setUser = user => {
-    this.setState({ currentUser: user });
+    this.setState({ user });
+  };
+
+  // sets the current loggedin users data in state
+  clearUser = user => {
+    this.setState({ user: {} });
   };
 
   // when a user logs in this function is triggered and it saves the users api token
@@ -73,11 +78,9 @@ export class ContextProvider extends React.Component {
     TokenService.saveAuthToken(authToken);
     const jwtPayload = TokenService.parseAuthToken();
     this.setUser({
-      currentUser: {
-        id: jwtPayload.user_id,
-        name: jwtPayload.name,
-        username: jwtPayload.sub
-      }
+      id: jwtPayload.user_id,
+      name: jwtPayload.name,
+      username: jwtPayload.sub
     });
     IdleService.regiserIdleTimerResets();
     TokenService.queueCallbackBeforeExpiry(() => {
@@ -91,7 +94,7 @@ export class ContextProvider extends React.Component {
     TokenService.clearAuthToken();
     TokenService.clearCallbackBeforeExpiry();
     IdleService.unRegisterIdleResets();
-    this.setUser({ currentUser: {} });
+    this.clearUser();
   };
 
   logoutBecauseIdle = () => {
@@ -117,7 +120,7 @@ export class ContextProvider extends React.Component {
 
   render() {
     const value = {
-      currentUser: this.state.currentUser,
+      user: this.state.user,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,

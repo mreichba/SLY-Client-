@@ -1,65 +1,39 @@
-html,
-body {
-  margin: 0;
+.dash-header{
+  margin-bottom: 20px;
+  font-family: 'Galada', cursive;
 }
 
-#App {
-  font-family: sans-serif;
-  height: 100vh;
+.dash-welcome{
+  margin-bottom: 30px;
+  font-size: 20px;
 }
 
-#page-wrap {
-  text-align: center;
-  overflow: auto;
+.dash-menu {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  
 }
 
-.bm-item {
-  display: inline-block;
-  text-decoration: none;
-  margin-bottom: 10px;
-  color: #d1d1d1;
-  transition: color 0.2s;
-}
-
-.bm-item:hover {
+.dash-slide{
+  background-color: rgb(28, 11, 56);
   color: white;
+  border: hotpink 1px solid;
+  padding: 2px;
 }
 
-.bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
-}
+.dash-prac-button {
+    background-color: rgb(28, 11, 56);
+    border: hotpink 1px solid;
+    color: white;
+    border-radius: 5px;
+    display: block;
+    margin: 10px auto 20px;
+    font-size: 20px;
+    padding: 5px 20px;
+  }
 
-.bm-burger-bars {
-  background: #373a47;
-}
-
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
-
-.bm-cross {
-  background: #bdc3c7;
-}
-
-.bm-menu {
-  background: #373a47;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-}
-
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-.bm-item-list {
-  color: #b8b7ad;
-}
-
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
-}
+  .dash-prac-button a {
+    text-decoration: none;
+    color: white;
+  }

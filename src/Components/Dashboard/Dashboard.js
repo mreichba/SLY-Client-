@@ -1,37 +1,18 @@
 import React from 'react';
-import SideBar from './sidebar';
-
+import Context from '../Context/Context';
+import { Link } from 'react-router-dom';
 import './Dashboard.css';
-
-// note still have work to do, working on implementing the side bar
-// and main questionnaire area, used some code from last capstone as starter
-export default function Dashboard() {
-  return (
-    <div id="Dashboard">
-      <SideBar />
-      <div id="page-wrap">
-        <h1>Sidebar</h1>
-        <h2>Placeholder</h2>
-      </div>
-    </div>
-  );
-}
+import SlideMenu from '../Slide-Menu/Slide-Menu';
 
 class Dashboard extends React.Component {
-    constructor(props){
-      super(props);
-      
-    //   this.state = {
-    //     language: '',
-    //     words: ['Placeholder']
-      }
-    }
-  
-   componentDidMount() {
-     
-   }
-  
-   static defaultProps = {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false
+    };
+  }
+  static contextType = Context;
+  static defaultProps = {
     language: {
       name: 'Default Language',
       total_score: 0
@@ -41,28 +22,38 @@ class Dashboard extends React.Component {
         name: 'Default username'
       }
     }
-   }
-  
-   static contextType = ContentContext
-  
-    render(){
-      console.log(this.context)
-      return(
-        <div className="dashboardContainer">
-  
-          <h2>Welcome back, {this.props.user.user.name}!
-          </h2>
-  
-          <Link to='/learn'>
-          <button>Start practicing</button>
-            </Link>
-          <div className="infoArea">
-            <div className="infoHeader"><h3>Next Question</h3></div>
-            
-          </div>
+  };
+
+  // toogles slide component open/close
+  toggleSlide = () => {
+    this.setState(prevState => ({ open: !prevState.open }));
+  };
+
+  componentDidMount() { }
+
+  render() {
+    return (
+      <div className='dashboardContainer'>
+        <h1 className='dash-header'><span className='accent'>S</span>omeone <span className='accent'>L</span>ike <span className='accent'>Y</span>ou</h1>
+        <div className='dash-menu'>
+          <button onClick={this.toggleSlide} className='dash-slide'>
+            <i class='fas fa-chevron-left'></i>
+          </button>
+          <SlideMenu toggleSlide={this.toggleSlide} open={this.state.open} />
         </div>
-      )
-    }
+
+        <h2 className='dash-welcome'>Welcome back, {this.context.user.name}!</h2>
+        <button className='dash-prac-button'>
+          <Link to='/learn'>
+            Start practicing
+          </Link>
+        </button>
+        <div className='infoArea'>
+
+        </div>
+      </div>
+    );
   }
-  
-  export default Dashboard;
+}
+
+export default Dashboard;

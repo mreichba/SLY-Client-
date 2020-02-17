@@ -14,9 +14,9 @@ export default class Login extends React.Component {
   };
 
   // when a user successfully logs in the app will push them to the app's dashboard
-  onSuccessfulRegistration = () => {
+  onSuccessfulLogin = () => {
     const { history } = this.props;
-    history.push('/');
+    history.push('/Dashboard');
   };
 
   // when a user clicks login the app takes the users login credentials and makes a api call
@@ -24,32 +24,43 @@ export default class Login extends React.Component {
   // if the credentials are invalid then it will display an error to inform the user
   onLogin = ev => {
     ev.preventDefault();
-    const { Username, Password } = ev.target;
+    const { username, password } = ev.target;
+    console.log('user: ' + username.value, 'pass: ' + password.value);
 
-    AuthService.postLogin(Username.value, Password.value)
-      .then(res => {
-        this.context.processLogin(res.authToken);
-        this.onSuccessfulLogin();
-      })
-      .catch(err => this.context.setError(err));
+    AuthService.postLogin({
+      username: username.value,
+      password: password.value
+    }).then(res => {
+      console.log('respone:' + res);
+      this.context.processLogin(res.authToken);
+      this.onSuccessfulLogin();
+    });
   };
 
   render() {
     return (
       <div className='Login'>
-        <h1>Login</h1>
+        <h1 className='login-header'>Login</h1>
         <p>{this.context.error ? this.context.error : ''}</p>
         <form onSubmit={this.onLogin}>
           <label htmlFor='Username'>Username</label>
-          <input className='Username' type='text' required />
+          <input className='Username' name='username' type='text' required />
 
           <label htmlFor='Password'>Password</label>
-          <input type='password' required className='Password' />
+          <input
+            type='password'
+            name='password'
+            required
+            className='Password'
+          />
 
           <div>
-            <button type='submit' className='Login_button'>Login</button>
-            <Link to='/Register' className='new'>New user?</Link>
-
+            <button type='submit' className='Login_button'>
+              Login
+            </button>
+            <Link to='/Register' className='new'>
+              New user?
+            </Link>
           </div>
         </form>
       </div>
