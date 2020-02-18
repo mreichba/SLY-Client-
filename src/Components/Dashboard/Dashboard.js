@@ -33,16 +33,19 @@ class Dashboard extends React.Component {
     this.setState(prevState => ({ open: !prevState.open }));
   };
 
+  // on mount makes a api call to the database to see if the user has completed the initial quiz
   componentDidMount() {
     QuizService.initialQuizStatus(this.context.user.id).then(res =>
       this.setState({ initialQuizComplete: res, isLoading: false })
     );
   }
 
+  // while the on mount api call is processing it renders loading
   Loader = () => {
     return this.state.isLoading ? <h1>Loading...</h1> : this.initial();
   };
 
+  // checks to see if the user has completed the initial quiz if they have then it renders the dashboard if they havent it will render the quiz
   initial = () => {
     if (this.state.initialQuizComplete) {
       return (
