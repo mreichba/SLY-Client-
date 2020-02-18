@@ -13,7 +13,7 @@ export default class Final extends React.Component {
         <ul>
           <li>
             <h5>Birthdate:</h5>
-            <p>{this.props.values.Age}</p>
+            <p>{this.props.values.Birthdate}</p>
           </li>
           <li>
             <h5>Location:</h5>
