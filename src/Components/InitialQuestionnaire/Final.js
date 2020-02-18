@@ -12,7 +12,7 @@ export default class Final extends React.Component {
       <div className='Final'>
         <ul>
           <li>
-            <h5>Age Group:</h5>
+            <h5>Birthdate:</h5>
             <p>{this.props.values.Age}</p>
           </li>
           <li>
@@ -20,16 +20,16 @@ export default class Final extends React.Component {
             <p>{this.props.values.Location}</p>
           </li>
           <li>
-            <h5>Favorite Hobby:</h5>
-            <p>{this.props.values.Hobby}</p>
+            <h5>Nationality:</h5>
+            <p>{this.props.values.Nationality}</p>
           </li>
           <li>
-            <h5>Favorite Movie Genre:</h5>
-            <p>{this.props.values.MovieGenre}</p>
+            <h5>Gender:</h5>
+            <p>{this.props.values.Gender}</p>
           </li>
           <li>
-            <h5>Favorite Music Genre:</h5>
-            <p>{this.props.values.MusicGenre}</p>
+            <h5>College Graduate:</h5>
+            <p>{this.props.values.CollegeGraduate}</p>
           </li>
         </ul>
         <div>
