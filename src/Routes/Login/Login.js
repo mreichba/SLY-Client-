@@ -9,7 +9,7 @@ export default class Login extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -40,6 +40,7 @@ export default class Login extends React.Component {
   render() {
     return (
       <div className='Login'>
+        <h1 className='login-header'>Login</h1>
         <p>{this.context.error ? this.context.error : ''}</p>
         <form onSubmit={this.onLogin}>
           <label htmlFor='Username'>Username</label>

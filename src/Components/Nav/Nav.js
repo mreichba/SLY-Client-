@@ -25,8 +25,9 @@ class Nav extends Component {
   renderLogoutLink() {
     return (
       <div className='logoutBar'>
-        <span className='userHeader'>{this.context.user.name}</span>
+        {/* <span className='userHeader'>{this.context.user.name}</span> */}
         <nav>
+          <img src={Logo} alt='sly logo' className='navLogo' />
           <div
             role='navigation'
             className='burgerIcon'

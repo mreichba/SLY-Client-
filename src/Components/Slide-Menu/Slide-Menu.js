@@ -24,20 +24,20 @@ export default class SlideMenu extends React.Component {
               {TokenService.hasAuthToken() ? (
                 <div className='Header__logged-in'>
                   <div className='dropdown'>
-                    <button className='dropbtn'>hi</button>
+                    <button className='dropbtn'>COMPONENTS GO HERE</button>
                     <div className='dropdown-content'></div>
                   </div>
                 </div>
               ) : (
-                <div className='Header__logged-out'>
-                  <Link className='mobile-Login' to='/login'>
-                    Log in
+                  <div className='Header__logged-out'>
+                    <Link className='mobile-Login' to='/login'>
+                      Log in
                   </Link>
-                  <Link className='mobile-Register' to='/register'>
-                    Register
+                    <Link className='mobile-Register' to='/register'>
+                      Register
                   </Link>
-                </div>
-              )}
+                  </div>
+                )}
             </div>
           </div>
         </div>
