@@ -10,6 +10,7 @@ nav {
   padding: 5px;
   font-size: 20px;
   min-height: 40px;
+  border-bottom: 1px solid hotpink;
 }
 
 .burgerIcon {
@@ -57,6 +58,7 @@ li a {
   height: 40px;
   width: auto;
   float: left;
+  padding-left: 10px;
 }
 
 /*tablet screen*/

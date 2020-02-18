@@ -1,4 +1,6 @@
-
+.login-header {
+  margin-bottom: 30px;
+}
 .new {
   color: blue;
 }
@@ -10,5 +12,6 @@
   border-radius: 5px;
   display: block;
   margin: 10px auto 20px;
+  padding: 5px 20px;
   font-size: 20px;
 }
