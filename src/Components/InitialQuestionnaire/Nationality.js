@@ -5,11 +5,11 @@ export default class Nationality extends React.Component {
     return (
       <div className='Nationality'>
         <form>
-          <label for='Nationailty'>What is your nationality?</label>
+          <label for='Nationality'>What is your nationality?</label>
           <select
-            name='Nationailty'
+            name='Nationality'
             required
-            onChange={this.props.handleChange('Nationailty')}
+            onChange={this.props.handleChange('Nationality')}
           >
             <option disabled selected>
               Choose an option
