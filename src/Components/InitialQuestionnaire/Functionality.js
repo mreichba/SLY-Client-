@@ -1,7 +1,9 @@
 import React from 'react';
-import Personal from './Personal';
-import Activity from './Activity';
-import Interest from './Interest';
+import Birthdate from './Birthdate';
+import Location from './Location';
+import Nationailty from './Nationality';
+import Gender from './Gender';
+import CollegeGraduate from './CollegeGraduate';
 import Final from './Final';
 
 export default class Questionnaire extends React.Component {
@@ -46,7 +48,7 @@ export default class Questionnaire extends React.Component {
     switch (this.state.step) {
       case 1:
         return (
-          <Personal
+          <Birthdate
             next={this.next}
             values={values}
             handleChange={this.handleChange}
@@ -54,7 +56,7 @@ export default class Questionnaire extends React.Component {
         );
       case 2:
         return (
-          <Activity
+          <Location
             next={this.next}
             prev={this.prev}
             values={values}
@@ -63,7 +65,7 @@ export default class Questionnaire extends React.Component {
         );
       case 3:
         return (
-          <Interest
+          <Nationailty
             next={this.next}
             prev={this.prev}
             values={values}
@@ -71,6 +73,24 @@ export default class Questionnaire extends React.Component {
           />
         );
       case 4:
+        return (
+          <Gender
+            next={this.next}
+            prev={this.prev}
+            values={values}
+            handleChange={this.handleChange}
+          />
+        );
+      case 5:
+        return (
+          <CollegeGraduate
+            next={this.next}
+            prev={this.prev}
+            values={values}
+            handleChange={this.handleChange}
+          />
+        );
+      case 6:
         return <Final prev={this.prev} values={values} />;
     }
   }
