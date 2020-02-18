@@ -5,16 +5,17 @@ export default class Location extends React.Component {
     return (
       <div className='Location'>
         <form>
-          <label for='Location'>Where are you located?</label>
+          <label htmlFor='Location'>What State are you located?</label>
           <input
             name='Location'
             type='text'
+            placeholder="Ex: Florida"
             required
-            onChange={this.props.handleChange('Location').toLowerCase()}
+            onChange={this.props.handleChange('Location')}
           />
           <div>
-            <button onClick={this.props.prev}>Back</button>
-            <button onClick={this.props.next}>Next</button>
+            <button onClick={this.props.prev} className='init-prev'>Back</button>
+            <button onClick={this.props.next} className='init-next'>Next</button>
           </div>
         </form>
       </div>

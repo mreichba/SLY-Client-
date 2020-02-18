@@ -49,25 +49,23 @@ class Dashboard extends React.Component {
   initial = () => {
     if (this.state.initialQuizComplete) {
       return (
-        <div>
-          <h1>Dashboard</h1>
-          <div>
-            <button onClick={this.toggleSlide}>
+        <div className='dashboardContainer'>
+          <h1 className='dash-header'><span className='accent'>S</span>omeone <span className='accent'>L</span>ike <span className='accent'>Y</span>ou</h1>
+          <div className='dash-menu'>
+            <button onClick={this.toggleSlide} className='dash-slide'>
               <i class='fas fa-chevron-left'></i>
-              <h3>blah</h3>
             </button>
             <SlideMenu toggleSlide={this.toggleSlide} open={this.state.open} />
           </div>
 
-          <h2>Welcome back, {this.context.user.name}!</h2>
-
-          <Link to='/learn'>
-            <button>Start practicing</button>
-          </Link>
+          <h2 className='dash-welcome'>Welcome back, {this.context.user.name}!</h2>
+          <button className='dash-prac-button'>
+            <Link to='/learn'>
+              Start practicing
+            </Link>
+          </button>
           <div className='infoArea'>
-            <div className='infoHeader'>
-              <h3>Next Question</h3>
-            </div>
+
           </div>
         </div>
       );

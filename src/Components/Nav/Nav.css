@@ -42,13 +42,13 @@ nav {
   display: none;
 }
 
-li {
+nav li {
   display: inline;
   text-align: right;
   margin: 4px
 }
 
-li a {
+nav li a {
   padding: 4px;
   color: white;
   text-decoration: none;
