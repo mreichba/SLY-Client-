@@ -11,7 +11,7 @@ export default class Questionnaire extends React.Component {
     super(props);
     this.state = {
       step: 1,
-      Age: '',
+      Birthdate: '',
       Location: '',
       Nationality: '',
       Gender: '',
@@ -38,9 +38,9 @@ export default class Questionnaire extends React.Component {
 
   render() {
     const values = {
-      Age: this.state.Age,
+      Birthdate: this.state.Birthdate,
       Location: this.state.Location,
-      Nationailty: this.state.Nationality,
+      Nationality: this.state.Nationality,
       Gender: this.state.Gender,
       CollegeGraduate: this.state.CollegeGraduate
     };
