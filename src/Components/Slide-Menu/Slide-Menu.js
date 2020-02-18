@@ -16,7 +16,7 @@ export default class SlideMenu extends React.Component {
         className={`mobileMenu ${this.props.open ? 'is-open' : 'is-closed'}`}
       >
         <div className={this.props.open}>
-          <button className='Close-Menu' onClick={this.props.slideToggle}>
+          <button className='Close-Menu' onClick={this.props.toggleSlide}>
             <i className='fas fa-times'></i>
           </button>
           <div id='Inner-Container'>
