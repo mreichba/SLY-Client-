@@ -32,9 +32,9 @@ export default class Final extends React.Component {
             <p>{this.props.values.CollegeGraduate}</p>
           </li>
         </ul>
-        <div>
-          <button onClick={this.props.prev}>Back</button>
-          <button onClick={this.submit}>Confirm & Submit</button>
+        <div className="final-buttons">
+          <button onClick={this.props.prev} className='init-prev'>Back</button>
+          <button onClick={this.submit} className='init-submit'>Confirm & Submit</button>
         </div>
       </div>
     );

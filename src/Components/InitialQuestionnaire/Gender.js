@@ -5,13 +5,14 @@ export default class Gender extends React.Component {
     return (
       <div className='Gender'>
         <form>
-          <label for='Gender'>What is your gender?</label>
+          <label htmlFor='Gender'>What is your gender?</label>
           <select
             name='Gender'
             required
+            defaultValue='Choose an option'
             onChange={this.props.handleChange('Gender')}
           >
-            <option disabled selected>
+            <option disabled value='Choose an option'>
               Choose an option
             </option>
             <option value='Male'>Male</option>
@@ -19,8 +20,8 @@ export default class Gender extends React.Component {
             <option value='Non-Binary'>Non Binary</option>
           </select>
           <div>
-            <button onClick={this.props.prev}>Back</button>
-            <button onClick={this.props.next}>Next</button>
+            <button onClick={this.props.prev} className='init-prev'>Back</button>
+            <button onClick={this.props.next} className='init-next'>Next</button>
           </div>
         </form>
       </div>

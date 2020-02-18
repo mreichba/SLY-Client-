@@ -5,14 +5,14 @@ export default class Birthdate extends React.Component {
     return (
       <div className='Birthdate'>
         <form>
-          <label for='Birthdate'>When were you born?</label>
+          <label htmlFor='Birthdate'>When were you born?</label>
           <input
             required
             type='date'
             onChange={this.props.handleChange('Birthdate')}
           />
           <div>
-            <button onClick={this.props.next}>Next</button>
+            <button onClick={this.props.next} className='init-next'>Next</button>
           </div>
         </form>
       </div>

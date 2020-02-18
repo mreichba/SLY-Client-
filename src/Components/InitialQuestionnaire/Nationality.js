@@ -5,17 +5,18 @@ export default class Nationality extends React.Component {
     return (
       <div className='Nationality'>
         <form>
-          <label for='Nationality'>What is your nationality?</label>
+          <label htmlFor='Nationality'>What is your nationality?</label>
           <select
             name='Nationality'
+            defaultValue='Choose an option'
             required
             onChange={this.props.handleChange('Nationality')}
           >
-            <option disabled selected>
+            <option disabled value='Choose an option'>
               Choose an option
             </option>
-            <option value=' United States'> United States</option>
-            <option value=' United Kingdom'> United Kingdom</option>
+            <option value='United States'> United States</option>
+            <option value='United Kingdom'> United Kingdom</option>
             <option value='Scotland'>Scotland</option>
             <option value=' Northern Ireland'> Northern Ireland</option>
             <option value='Denmark'>Denmark</option>
@@ -61,8 +62,8 @@ export default class Nationality extends React.Component {
           </select>
 
           <div>
-            <button onClick={this.props.prev}>Back</button>
-            <button onClick={this.props.next}>Next</button>
+            <button onClick={this.props.prev} className='init-prev'>Back</button>
+            <button onClick={this.props.next} className='init-next'>Next</button>
           </div>
         </form>
       </div>

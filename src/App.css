@@ -17,6 +17,21 @@ input {
   margin: 0 0 10px;
 }
 
+.init-next, .init-prev, .init-submit{
+  background-color: rgb(28, 11, 56);
+  border: hotpink 1px solid;
+  color: white;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px 10px 10px;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+
+.final-buttons{
+  margin-top: 20px;
+}
+
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;

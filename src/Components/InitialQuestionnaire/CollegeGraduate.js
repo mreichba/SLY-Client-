@@ -5,13 +5,14 @@ export default class CollegeGradute extends React.Component {
     return (
       <div className='CollegeGradute'>
         <form>
-          <label for='CollegeGradute'>Are you a college graduate?</label>
+          <label htmlFor='CollegeGradute'>Are you a college graduate?</label>
           <select
             name='CollegeGradute'
+            defaultValue='Choose an option'
             required
             onChange={this.props.handleChange('CollegeGraduate')}
           >
-            <option disabled selected>
+            <option disabled value='Choose an option'>
               Choose an option
             </option>
             <option value='Yes'>Yes</option>
@@ -19,8 +20,8 @@ export default class CollegeGradute extends React.Component {
             <option value='Attending'>Attending</option>
           </select>
           <div>
-            <button onClick={this.props.prev}>Back</button>
-            <button onClick={this.props.next}>Next</button>
+            <button onClick={this.props.prev} className='init-prev'>Back</button>
+            <button onClick={this.props.next} className='init-next'>Next</button>
           </div>
         </form>
       </div>
