@@ -8,6 +8,7 @@ const Context = React.createContext({
   processLogout: () => {},
   setUser: () => {},
   user: {},
+  initialQuizComplete: null,
   setError: () => {},
   clearError: () => {},
   error: null
@@ -20,7 +21,8 @@ export class ContextProvider extends React.Component {
     super(props);
     this.state = {
       user: {},
-      error: null
+      error: null,
+      initialQuizComplete: null
     };
 
     const jwtPayload = TokenService.parseAuthToken();
@@ -67,9 +69,19 @@ export class ContextProvider extends React.Component {
     this.setState({ user });
   };
 
-  // sets the current loggedin users data in state
+  // clears the current loggedin users data in state
   clearUser = user => {
     this.setState({ user: {} });
+  };
+
+  // sets the initial quizStatus in state
+  setQuizStatus = boolean => {
+    this.setState({ initialQuizComplete: boolean });
+  };
+
+  // clears the initial quizStatus in state
+  clearQuizStatus = () => {
+    this.setState({ initialQuizComplete: null });
   };
 
   // when a user logs in this function is triggered and it saves the users api token
@@ -95,6 +107,7 @@ export class ContextProvider extends React.Component {
     TokenService.clearCallbackBeforeExpiry();
     IdleService.unRegisterIdleResets();
     this.clearUser();
+    this.clearQuizStatus();
   };
 
   logoutBecauseIdle = () => {
@@ -126,7 +139,9 @@ export class ContextProvider extends React.Component {
       clearError: this.clearError,
       setUser: this.setUser,
       processLogin: this.processLogin,
-      processLogout: this.processLogout
+      processLogout: this.processLogout,
+      setQuizStatus: this.setQuizStatus,
+      initialQuizComplete: this.state.initialQuizComplete
     };
     return (
       <Context.Provider value={value}>{this.props.children}</Context.Provider>
