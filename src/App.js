@@ -5,8 +5,8 @@ import Landing from './Routes/Landing/Landing';
 import Login from './Routes/Login/Login';
 import Register from './Routes/Register/Register';
 import Boundary from './Routes/Boundary/Boundary';
-// import PrivateRoute from './Routes/Service-Routes/PrivateRoute';
-// import PublicRoute from './Routes/Service-Routes/PublicRoute';
+import PrivateRoute from './Routes/Service-Routes/PrivateRoute';
+import PublicRoute from './Routes/Service-Routes/PublicRoute';
 import { ContextProvider } from './Components/Context/Context';
 import Nav from './Components/Nav/Nav';
 import Dashboard from './Components/Dashboard/Dashboard';
@@ -18,38 +18,29 @@ class App extends React.Component {
         <ContextProvider>
           <Nav />
           <Switch>
-            <Route
+            <PublicRoute
               exact
               path='/'
-              render={routeProps => {
-                return <Landing {...routeProps} />;
-              }}
+              component={Landing}
+
             />
-            <Route
+            <PublicRoute
               exact
               path='/Login'
-              render={routeProps => {
-                return <Login {...routeProps} />;
-              }}
+              component={Login}
             />
-            <Route
+            <PublicRoute
               exact
               path='/Register'
-              render={routeProps => {
-                return <Register {...routeProps} />;
-              }}
+              component={Register}
             />
-            <Route
+            <PrivateRoute
               exact
               path='/Dashboard'
-              render={routeProps => {
-                return <Dashboard {...routeProps} />;
-              }}
+              component={Dashboard}
             />
             <Route
-              render={routeProps => {
-                return <Boundary {...routeProps} />;
-              }}
+              component={Boundary}
             />
           </Switch>
         </ContextProvider>
