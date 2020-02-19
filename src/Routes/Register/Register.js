@@ -42,19 +42,19 @@ export default class Register extends React.Component {
         <h1 className='reg-header'>Register</h1>
         <p>{this.context.error ? this.context.error : ''}</p>
         <form onSubmit={this.onLogin}>
-          <label for='FirstName'>First Name</label>
+          <label htmlFor='FirstName'>First Name</label>
           <input type='text' required name='FirstName' />
 
-          <label for='LastName'>Last Name</label>
+          <label htmlFor='LastName'>Last Name</label>
           <input type='text' required name='LastName' />
 
-          <label for='Email'>Email</label>
+          <label htmlFor='Email'>Email</label>
           <input type='email' required name='Email' />
 
-          <label for='Username'>Username</label>
+          <label htmlFor='Username'>Username</label>
           <input type='text' required name='Username' />
 
-          <label for='Password'>Password</label>
+          <label htmlFor='Password'>Password</label>
           <input type='password' required name='Password' />
 
           <div>
