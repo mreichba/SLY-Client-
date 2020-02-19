@@ -59,7 +59,7 @@ export default class Final extends React.Component {
 
       // uses a helper function to make the api call to our api then checks if the response was okay if so it sends the user back to the dashboard if no then it keeps the user on the final component informing them about the error
       QuizService.submitInitialQuiz(answers).then(res =>
-        res.ok ? this.onSuccessfulSubmit() : ''
+        this.context.error ? this.onSuccessfulSubmit() : ''
       );
     }
   };
