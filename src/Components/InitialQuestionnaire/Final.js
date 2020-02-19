@@ -19,8 +19,7 @@ export default class Final extends React.Component {
 
   // when a user successfully submits their quiz in the app it will push them to the app's dashboard
   onSuccessfulSubmit = () => {
-    const { history } = this.props;
-    history.push('/Dashboard');
+    window.location.reload(false);
   };
 
   // submits the user's final answers to the database to save to the user's account
@@ -58,9 +57,9 @@ export default class Final extends React.Component {
       };
 
       // uses a helper function to make the api call to our api then checks if the response was okay if so it sends the user back to the dashboard if no then it keeps the user on the final component informing them about the error
-      QuizService.submitInitialQuiz(answers).then(res =>
-        this.context.error ? this.onSuccessfulSubmit() : ''
-      );
+      QuizService.submitInitialQuiz(answers)
+        .then(user => this.onSuccessfulSubmit())
+        .catch(err => this.setState({ error: err }));
     }
   };
 
