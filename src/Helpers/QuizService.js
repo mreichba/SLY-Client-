@@ -10,7 +10,7 @@ const QuizService = {
       },
       body: JSON.stringify(answers)
     }).then(res =>
-      !res.ok ? res.json().then(e => this.context.setError(e)) : res.json()
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
   initialQuizStatus(user_id) {
