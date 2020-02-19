@@ -9,9 +9,16 @@ export default class Login extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => { }
+      push: () => {}
     }
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null
+    };
+  }
 
   // when a user successfully logs in the app will push them to the app's dashboard
   onSuccessfulLogin = () => {
@@ -25,23 +32,25 @@ export default class Login extends React.Component {
   onLogin = ev => {
     ev.preventDefault();
     const { username, password } = ev.target;
-    console.log('user: ' + username.value, 'pass: ' + password.value);
 
     AuthService.postLogin({
-      username: username.value,
+      username: username.value.toLowerCase(),
       password: password.value
-    }).then(res => {
-      console.log('respone:' + res);
-      this.context.processLogin(res.authToken);
-      this.onSuccessfulLogin();
-    });
+    })
+      .then(res => {
+        this.context.processLogin(res.authToken);
+        this.onSuccessfulLogin();
+      })
+      .catch(res => {
+        this.setState({ error: res.error });
+      });
   };
 
   render() {
     return (
       <div className='Login'>
         <h1 className='login-header'>Login</h1>
-        <p>{this.context.error ? this.context.error : ''}</p>
+        <p>{this.state.error ? <h5>{this.state.error}</h5> : ''}</p>
         <form onSubmit={this.onLogin}>
           <label htmlFor='Username'>Username</label>
           <input className='Username' name='username' type='text' required />
