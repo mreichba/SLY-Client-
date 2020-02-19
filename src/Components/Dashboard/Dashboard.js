@@ -3,12 +3,15 @@ import Context from '../Context/Context';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import SlideMenu from '../Slide-Menu/Slide-Menu';
+import QuizService from '../../Helpers/QuizService';
+import InitialQuiz from '../InitialQuestionnaire/Functionality';
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      isLoading: true
     };
   }
   static contextType = Context;
@@ -24,35 +27,56 @@ class Dashboard extends React.Component {
     }
   };
 
-  // toogles slide component open/close
+  // toggles slide component open/close
   toggleSlide = () => {
     this.setState(prevState => ({ open: !prevState.open }));
   };
 
-  componentDidMount() { }
+  // on mount makes a api call to the database to see if the user has completed the initial quiz
+  async componentDidMount() {
+    const status = await QuizService.initialQuizStatus(this.context.user.id);
+    this.context.setQuizStatus(status);
+    this.setState({ isLoading: false });
+  }
+
+  // while the on mount api call is processing it renders loading
+  Loader = () => {
+    return this.state.isLoading ? <h1>Loading...</h1> : this.initial();
+  };
+
+  // checks to see if the user has completed the initial quiz if they have then it renders the dashboard if they havent it will render the quiz
+  initial = () => {
+    if (this.context.initialQuizComplete) {
+      return (
+        <div className='dashboardContainer'>
+          <h1 className='dash-header'>
+            <span className='accent'>S</span>omeone{' '}
+            <span className='accent'>L</span>ike{' '}
+            <span className='accent'>Y</span>ou
+          </h1>
+          <div className='dash-menu'>
+            <button onClick={this.toggleSlide} className='dash-slide'>
+              <i class='fas fa-chevron-left'></i>
+            </button>
+            <SlideMenu toggleSlide={this.toggleSlide} open={this.state.open} />
+          </div>
+
+          <h2 className='dash-welcome'>
+            Welcome back, {this.context.user.name}!
+          </h2>
+          <button className='dash-prac-button'>
+            <Link to='/learn'>Start practicing</Link>
+          </button>
+          <div className='infoArea'></div>
+        </div>
+      );
+    } else {
+      return <InitialQuiz />;
+    }
+  };
 
   render() {
-    return (
-      <div className='dashboardContainer'>
-        <h1 className='dash-header'><span className='accent'>S</span>omeone <span className='accent'>L</span>ike <span className='accent'>Y</span>ou</h1>
-        <div className='dash-menu'>
-          <button onClick={this.toggleSlide} className='dash-slide'>
-            <i class='fas fa-chevron-left'></i>
-          </button>
-          <SlideMenu toggleSlide={this.toggleSlide} open={this.state.open} />
-        </div>
-
-        <h2 className='dash-welcome'>Welcome back, {this.context.user.name}!</h2>
-        <button className='dash-prac-button'>
-          <Link to='/learn'>
-            Start practicing
-          </Link>
-        </button>
-        <div className='infoArea'>
-
-        </div>
-      </div>
-    );
+    return <div className='dashboardContainer'>{this.Loader()}</div>;
   }
 }
 
