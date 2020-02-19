@@ -8,9 +8,16 @@ export default class Register extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => { }
+      push: () => {}
     }
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null
+    };
+  }
 
   // if the user's account creation inputs are vaild and the account is created without error
   // the app will push the user to the login route so the user can login to their new account
@@ -30,17 +37,21 @@ export default class Register extends React.Component {
       first_name: FirstName.value,
       last_name: LastName.value,
       email: Email.value,
-      username: Username.value,
+      username: Username.value.toLowerCase(),
       password: Password.value
     };
-    AuthService.postUser(newUser).then(this.onSuccessfulRegistration());
+    AuthService.postUser(newUser)
+      .then(user => this.onSuccessfulRegistration())
+      .catch(res => {
+        this.setState({ error: res.error });
+      });
   };
 
   render() {
     return (
       <div className='Register'>
         <h1 className='reg-header'>Register</h1>
-        <p>{this.context.error ? this.context.error : ''}</p>
+        <p>{this.state.error ? <h5>{this.state.error}</h5> : ''}</p>
         <form onSubmit={this.onLogin}>
           <label htmlFor='FirstName'>First Name</label>
           <input type='text' required name='FirstName' />
