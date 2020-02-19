@@ -5,6 +5,8 @@ import Landing from './Routes/Landing/Landing';
 import Login from './Routes/Login/Login';
 import Register from './Routes/Register/Register';
 import Boundary from './Routes/Boundary/Boundary';
+// import PrivateRoute from './Routes/Service-Routes/PrivateRoute';
+// import PublicRoute from './Routes/Service-Routes/PublicRoute';
 import { ContextProvider } from './Components/Context/Context';
 import Nav from './Components/Nav/Nav';
 import Dashboard from './Components/Dashboard/Dashboard';
