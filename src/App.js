@@ -22,7 +22,6 @@ class App extends React.Component {
               exact
               path='/'
               component={Landing}
-
             />
             <PublicRoute
               exact
