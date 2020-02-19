@@ -11,11 +11,11 @@ export default class Questionnaire extends React.Component {
     super(props);
     this.state = {
       step: 1,
-      Birthdate: '',
-      Location: '',
-      Nationality: '',
-      Gender: '',
-      CollegeGraduate: ''
+      Birthdate: undefined,
+      Location: undefined,
+      Nationality: undefined,
+      Gender: undefined,
+      CollegeGraduate: undefined
     };
   }
 

@@ -11,7 +11,6 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       open: false,
-      initialQuizComplete: null,
       isLoading: true
     };
   }
@@ -34,10 +33,10 @@ class Dashboard extends React.Component {
   };
 
   // on mount makes a api call to the database to see if the user has completed the initial quiz
-  componentDidMount() {
-    QuizService.initialQuizStatus(this.context.user.id).then(res =>
-      this.setState({ initialQuizComplete: res, isLoading: false })
-    );
+  async componentDidMount() {
+    const status = await QuizService.initialQuizStatus(this.context.user.id);
+    this.context.setQuizStatus(status);
+    this.setState({ isLoading: false });
   }
 
   // while the on mount api call is processing it renders loading
@@ -47,10 +46,14 @@ class Dashboard extends React.Component {
 
   // checks to see if the user has completed the initial quiz if they have then it renders the dashboard if they havent it will render the quiz
   initial = () => {
-    if (this.state.initialQuizComplete) {
+    if (this.context.initialQuizComplete) {
       return (
         <div className='dashboardContainer'>
-          <h1 className='dash-header'><span className='accent'>S</span>omeone <span className='accent'>L</span>ike <span className='accent'>Y</span>ou</h1>
+          <h1 className='dash-header'>
+            <span className='accent'>S</span>omeone{' '}
+            <span className='accent'>L</span>ike{' '}
+            <span className='accent'>Y</span>ou
+          </h1>
           <div className='dash-menu'>
             <button onClick={this.toggleSlide} className='dash-slide'>
               <i class='fas fa-chevron-left'></i>
@@ -58,15 +61,13 @@ class Dashboard extends React.Component {
             <SlideMenu toggleSlide={this.toggleSlide} open={this.state.open} />
           </div>
 
-          <h2 className='dash-welcome'>Welcome back, {this.context.user.name}!</h2>
+          <h2 className='dash-welcome'>
+            Welcome back, {this.context.user.name}!
+          </h2>
           <button className='dash-prac-button'>
-            <Link to='/learn'>
-              Start practicing
-            </Link>
+            <Link to='/learn'>Start practicing</Link>
           </button>
-          <div className='infoArea'>
-
-          </div>
+          <div className='infoArea'></div>
         </div>
       );
     } else {
