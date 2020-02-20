@@ -1,6 +1,7 @@
 import React from 'react';
 import QuizService from '../../Helpers/QuizService';
 import Context from '../Context/Context';
+import TokenService from '../../Helpers/TokenService';
 
 export default class Final extends React.Component {
   static contextType = Context;
@@ -57,7 +58,7 @@ export default class Final extends React.Component {
       };
 
       // uses a helper function to make the api call to our api then checks if the response was okay if so it sends the user back to the dashboard if no then it keeps the user on the final component informing them about the error
-      QuizService.submitInitialQuiz(answers)
+      QuizService.submitInitialQuiz(answers, TokenService.getAuthToken())
         .then(user => this.onSuccessfulSubmit())
         .catch(err => this.setState({ error: err }));
     }
