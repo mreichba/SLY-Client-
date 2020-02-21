@@ -66,9 +66,11 @@ class Dashboard extends React.Component {
           </h2>
           <div className='statsArea'>
             STATS GO HERE
+
           </div>
           <div className='quizArea'>
             QUIZES GO HERE
+
           </div>
         </div>
       );
