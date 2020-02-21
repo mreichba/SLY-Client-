@@ -6,6 +6,7 @@ import SlideMenu from '../Slide-Menu/Slide-Menu';
 import QuizService from '../../Helpers/QuizService';
 import InitialQuiz from '../InitialQuestionnaire/Functionality';
 import TokenService from '../../Helpers/TokenService';
+import QuizContainer from '../QuizContainer/QuizContainer';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -68,10 +69,9 @@ class Dashboard extends React.Component {
           <h2 className='dash-welcome'>
             Welcome back, {this.context.user.name}!
           </h2>
-          <button className='dash-prac-button'>
-            <Link to='/learn'>Start practicing</Link>
-          </button>
-          <div className='infoArea'></div>
+          <div className='infoArea'>
+            <QuizContainer />
+          </div>
         </div>
       );
     } else {
