@@ -25,6 +25,28 @@ const QuizService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
+  getAllQuizes(auth) {
+    return fetch(`${config.API_ENDPOINT}/questions/topic`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  getQuizByTopic(topic, auth) {
+    return fetch(`${config.API_ENDPOINT}/questions/topic/${topic}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
   getNonCompleted(user_id, auth) {
     return fetch(`${config.API_ENDPOINT}/initial/noncompleted/${user_id}`, {
       method: 'GET',
