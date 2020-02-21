@@ -3,7 +3,7 @@ import config from '../config';
 const QuizService = {
   // api call used to submit users initial questionnaire data to db
   submitInitialQuiz(answers, auth) {
-    return fetch(`${config.API_ENDPOINT}/users/initial`, {
+    return fetch(`${config.API_ENDPOINT}/initial`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -15,7 +15,7 @@ const QuizService = {
     );
   },
   initialQuizStatus(user_id, auth) {
-    return fetch(`${config.API_ENDPOINT}/users/initial/${user_id}`, {
+    return fetch(`${config.API_ENDPOINT}/initial/${user_id}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -26,16 +26,13 @@ const QuizService = {
     );
   },
   getNonCompleted(user_id, auth) {
-    return fetch(
-      `${config.API_ENDPOINT}/users/initial/noncompleted/${user_id}`,
-      {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-          Authorization: `Bearer ${auth}`
-        }
+    return fetch(`${config.API_ENDPOINT}/initial/noncompleted/${user_id}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
       }
-    ).then(res =>
+    }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },

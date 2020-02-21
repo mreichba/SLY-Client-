@@ -29,10 +29,6 @@ export default class QuizContainer extends React.Component {
   }
 
   render() {
-    return (
-      <div className='QuizContainer'>
-        <h1>Quizes</h1>
-      </div>
-    );
+    return <div className='QuizContainer'></div>;
   }
 }
