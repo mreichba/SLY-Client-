@@ -61,6 +61,8 @@
   right: 0;
   background-color: rgb(28, 11, 56);
   background-size: cover;
+  border: 1px solid hotpink;
+  border-right: none;
   border-radius: 10px 0 0 10px;
   overflow-x: hidden;
   padding-top: 60px;

@@ -9,7 +9,7 @@
 }
 
 .dash-menu {
-  position: absolute;
+  position: fixed;
   right: 10px;
   top: 50%;
   
@@ -23,17 +23,48 @@
 }
 
 .dash-prac-button {
-    background-color: rgb(28, 11, 56);
-    border: hotpink 1px solid;
-    color: white;
-    border-radius: 5px;
-    display: block;
-    margin: 10px auto 20px;
-    font-size: 20px;
-    padding: 5px 20px;
+  background-color: rgb(28, 11, 56);
+  border: hotpink 1px solid;
+  color: white;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto 20px;
+  font-size: 20px;
+  padding: 5px 20px;
+}
+
+.dash-prac-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.statsArea{
+  border: red 1px solid;
+  height: 200px;
+  width: 70%;
+  margin: 4%;
+}
+
+.quizArea{
+  border: red 1px solid;
+  height: 400px;
+  width: 70%;
+  margin: 4%;
+}
+
+@media screen and (max-width: 820px) {
+  .statsArea{
+    border: red 1px solid;
+    height: 200px;
+    width: 90%;
+    margin: 4%;
+  }
+  
+  .quizArea{
+    border: red 1px solid;
+    height: 400px;
+    width: 90%;
+    margin: 4%;
   }
 
-  .dash-prac-button a {
-    text-decoration: none;
-    color: white;
-  }
+}

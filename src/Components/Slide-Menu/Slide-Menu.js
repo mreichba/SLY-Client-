@@ -24,7 +24,9 @@ export default class SlideMenu extends React.Component {
               {TokenService.hasAuthToken() ? (
                 <div className='Header__logged-in'>
                   <div className='dropdown'>
-                    <button className='dropbtn'>COMPONENTS GO HERE</button>
+                    <button className='dropbtn'>New Questions</button>
+                    <button className='dropbtn'>Completed Questions</button>
+                    <button className='dropbtn'>Genres</button>
                     <div className='dropdown-content'></div>
                   </div>
                 </div>
