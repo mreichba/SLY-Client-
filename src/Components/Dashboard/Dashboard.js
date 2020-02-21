@@ -64,10 +64,14 @@ class Dashboard extends React.Component {
           <h2 className='dash-welcome'>
             Welcome back, {this.context.user.name}!
           </h2>
-          <button className='dash-prac-button'>
-            <Link to='/learn'>Start practicing</Link>
-          </button>
-          <div className='infoArea'></div>
+          <div className='statsArea'>
+            STATS GO HERE
+
+          </div>
+          <div className='quizArea'>
+            QUIZES GO HERE
+
+          </div>
         </div>
       );
     } else {
