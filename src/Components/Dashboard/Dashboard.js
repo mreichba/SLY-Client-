@@ -69,8 +69,11 @@ class Dashboard extends React.Component {
           <h2 className='dash-welcome'>
             Welcome back, {this.context.user.name}!
           </h2>
-          <div className='infoArea'>
-            <QuizContainer />
+          <div className='statsArea'>
+            STATS GO HERE
+          </div>
+          <div className='quizArea'>
+            QUIZES GO HERE
           </div>
         </div>
       );
