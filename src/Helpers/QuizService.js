@@ -2,22 +2,68 @@ import config from '../config';
 
 const QuizService = {
   // api call used to submit users initial questionnaire data to db
-  submitInitialQuiz(answers) {
-    return fetch(`${config.API_ENDPOINT}/users/initial`, {
+  submitInitialQuiz(answers, auth) {
+    return fetch(`${config.API_ENDPOINT}/initial`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
       },
       body: JSON.stringify(answers)
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  initialQuizStatus(user_id) {
-    return fetch(`${config.API_ENDPOINT}/users/initial/${user_id}`, {
+  initialQuizStatus(user_id, auth) {
+    return fetch(`${config.API_ENDPOINT}/initial/${user_id}`, {
       method: 'GET',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  getAllQuizes(auth) {
+    return fetch(`${config.API_ENDPOINT}/questions/topic`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  getQuizByTopic(topic, auth) {
+    return fetch(`${config.API_ENDPOINT}/questions/topic/${topic}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  getNonCompleted(user_id, auth) {
+    return fetch(`${config.API_ENDPOINT}/initial/noncompleted/${user_id}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  getCompleted(user_id, auth) {
+    return fetch(`${config.API_ENDPOINT}/questions/completed/${user_id}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
       }
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()

@@ -5,6 +5,8 @@ import './Dashboard.css';
 import SlideMenu from '../Slide-Menu/Slide-Menu';
 import QuizService from '../../Helpers/QuizService';
 import InitialQuiz from '../InitialQuestionnaire/Functionality';
+import TokenService from '../../Helpers/TokenService';
+import QuizContainer from '../QuizContainer/QuizContainer';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -34,7 +36,10 @@ class Dashboard extends React.Component {
 
   // on mount makes a api call to the database to see if the user has completed the initial quiz
   async componentDidMount() {
-    const status = await QuizService.initialQuizStatus(this.context.user.id);
+    const status = await QuizService.initialQuizStatus(
+      this.context.user.id,
+      TokenService.getAuthToken()
+    );
     this.context.setQuizStatus(status);
     this.setState({ isLoading: false });
   }
@@ -66,11 +71,9 @@ class Dashboard extends React.Component {
           </h2>
           <div className='statsArea'>
             STATS GO HERE
-
           </div>
           <div className='quizArea'>
             QUIZES GO HERE
-
           </div>
         </div>
       );
