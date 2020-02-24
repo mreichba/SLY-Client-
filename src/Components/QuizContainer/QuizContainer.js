@@ -40,9 +40,13 @@ export default class QuizContainer extends React.Component {
           {this.state.allQuizes.map(quiz => {
             return (
               <Link to={`/quiz/${quiz.id}`}>
-                <li className='quizTopic'>{quiz.question}</li>
-                <p>{quiz.topic}</p>
-                <p>{quiz.answered}</p>
+                <li className='quizQuestion'>
+                  {quiz.question}
+                  {/* <div className='quizDesc'> */}
+                  <p className='quizTopic'>{quiz.topic}</p>
+                  {/* <p className='quizAnswered'>{quiz.answered}</p> */}
+                  {/* </div> */}
+                </li>
               </Link>
             );
           })}
