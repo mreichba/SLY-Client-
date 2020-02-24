@@ -10,6 +10,7 @@ import PublicRoute from './Routes/Service-Routes/PublicRoute';
 import { ContextProvider } from './Components/Context/Context';
 import Nav from './Components/Nav/Nav';
 import Dashboard from './Routes/Dashboard/Dashboard';
+import Quiz from './Routes/Quiz/Quiz';
 
 class App extends React.Component {
   render() {
@@ -18,29 +19,12 @@ class App extends React.Component {
         <ContextProvider>
           <Nav />
           <Switch>
-            <PublicRoute
-              exact
-              path='/'
-              component={Landing}
-            />
-            <PublicRoute
-              exact
-              path='/Login'
-              component={Login}
-            />
-            <PublicRoute
-              exact
-              path='/Register'
-              component={Register}
-            />
-            <PrivateRoute
-              exact
-              path='/Dashboard'
-              component={Dashboard}
-            />
-            <Route
-              component={Boundary}
-            />
+            <PublicRoute exact path='/' component={Landing} />
+            <PublicRoute exact path='/Login' component={Login} />
+            <PublicRoute exact path='/Register' component={Register} />
+            <PrivateRoute exact path='/Dashboard' component={Dashboard} />
+            <PrivateRoute path='/quiz/:topic' component={Quiz} />
+            <Route component={Boundary} />
           </Switch>
         </ContextProvider>
       </div>
