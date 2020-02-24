@@ -16,9 +16,9 @@ export default class Quiz extends React.Component {
   }
 
   componentDidMount() {
-    // runs a api call to the api with the quiz topic & user's id to check if the user has completed the quiz before
+    // runs a api call to the api with the question id & user's id to check if the user has completed the quiz before
     QuizService.checkIfQuizCompleted(
-      this.props.match.params.topic,
+      this.props.match.params.question_id,
       this.context.user.id,
       TokenService.getAuthToken()
     ).then(result => {
@@ -65,7 +65,7 @@ export default class Quiz extends React.Component {
     else {
       return (
         <div>
-          <h1>{this.state.quiz.name}</h1>
+          <h1>{this.state.quiz.question}</h1>
         </div>
       );
     }
