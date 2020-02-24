@@ -47,14 +47,22 @@
 
 .quizArea{
   border: red 1px solid;
-  height: auto;
+  height: 450px;
+  overflow: scroll;
   width: 70%;
   margin: 4%;
+  margin-top: 10px;
+}
+
+::-webkit-scrollbar { width: 0px; background: transparent; }
+
+.quizHeader{
+  width: 78%;
+  margin: 0;
 }
 
 .quizContents {
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: space-evenly;
   width: 100%;
   height: auto;
@@ -64,17 +72,22 @@
 
 @media screen and (max-width: 820px) {
   .statsArea{
-    border: red 1px solid;
-    height: 200px;
+    /* border: red 1px solid; */
+    /* height: 200px; */
     width: 90%;
-    margin: 4%;
+    /* margin: 4%; */
   }
-  
+
+  .quizHeader{
+    margin: 0 auto 0;
+  }
+
   .quizArea{
-    border: red 1px solid;
+    /* border: red 1px solid; */
     height: auto;
     width: 90%;
-    margin: 4%;
+    /* margin: 4%;
+    margin-top: 10px; */
   }
 
 }
