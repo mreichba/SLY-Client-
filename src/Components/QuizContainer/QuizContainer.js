@@ -36,11 +36,11 @@ export default class QuizContainer extends React.Component {
   render() {
     return (
       <div className='QuizContainer'>
-        <ul>
+        <ul className='quizUL'>
           {this.state.allQuizes.map(quiz => {
             return (
               <Link to={`/quiz/${quiz.topic}`}>
-                <li>{quiz.topic}</li>
+                <li className='quizTopic'>{quiz.topic}</li>
               </Link>
             );
           })}
