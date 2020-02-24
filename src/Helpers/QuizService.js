@@ -28,7 +28,7 @@ const QuizService = {
   },
   // TEMP API CALL
   getAllQuizes(auth) {
-    return fetch(`${config.API_ENDPOINT}/questions/topic`, {
+    return fetch(`${config.API_ENDPOINT}/questions/`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
