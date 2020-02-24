@@ -1,5 +1,6 @@
 import React from 'react';
 import Context from '../../Components/Context/Context';
+import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import SlideMenu from '../../Components/Slide-Menu/Slide-Menu';
 import QuizService from '../../Helpers/QuizService';
@@ -68,9 +69,14 @@ class Dashboard extends React.Component {
           <h2 className='dash-welcome'>
             Welcome back, {this.context.user.name}!
           </h2>
-          <div className='statsArea'>STATS GO HERE</div>
+          <div className='statsArea'>
+            STATS GO HERE
+          </div>
           <div className='quizArea'>
-            <QuizContainer />
+            <h3 className='quizHeader'>Quizes</h3>
+            <div className='quizContents'>
+              <QuizContainer />
+            </div>
           </div>
         </div>
       );
