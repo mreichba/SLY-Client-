@@ -7,6 +7,7 @@ html {
   background-color: rgb(177, 198, 211);
   margin-top: 80px;
   background-image: url(./Media/SLY-Background.jpg);
+  background-size: cover;
 }
 
 label {

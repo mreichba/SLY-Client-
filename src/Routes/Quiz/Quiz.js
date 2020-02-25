@@ -24,7 +24,10 @@ export default class Quiz extends React.Component {
       TokenService.getAuthToken()
     ).then(result => {
       if (result) {
-        this.setState({ quizStatus: 'completed', isLoading: false });
+        this.setState({
+          quizStatus: 'completed',
+          isLoading: false
+        });
       }
       // if the user hasn't completed the given quiz before it will run another api call to grab the questions and answer selections
       // so the user can complete the quiz
@@ -35,11 +38,9 @@ export default class Quiz extends React.Component {
           TokenService.getAuthToken()
         )
           .then(result => {
-            console.log('i ran 2');
             this.setState({ quiz: result });
           })
           .then(() => {
-            console.log('i ran 2');
             QuizService.getQuizAnswers(
               this.props.match.params.question_id,
               TokenService.getAuthToken()
@@ -50,6 +51,12 @@ export default class Quiz extends React.Component {
       }
     });
   }
+
+  // when a user successfully submits their answer the app will push them back to the dashboard
+  onSuccessfulSubmittion = () => {
+    const { history } = this.props;
+    history.push('/Dashboard');
+  };
 
   submitAnswer = ev => {
     ev.preventDefault();
