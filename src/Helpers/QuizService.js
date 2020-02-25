@@ -50,6 +50,30 @@ const QuizService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
+  // gets a particular quiz question via its question_id
+  getQuiz(question_id, auth) {
+    return fetch(`${config.API_ENDPOINT}/questions/${question_id}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  // gets a particular quiz answers via its question_id
+  getQuizAnswers(question_id, auth) {
+    return fetch(`${config.API_ENDPOINT}/answers/${question_id}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
   // api call that checks if the current logged user has completed the quiz their currently trying to access
   checkIfQuizCompleted(question_id, user_id, auth) {
     return fetch(`${config.API_ENDPOINT}/answers/${question_id}/${user_id}`, {
