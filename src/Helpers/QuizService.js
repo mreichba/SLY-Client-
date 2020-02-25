@@ -51,8 +51,8 @@ const QuizService = {
     );
   },
   // api call that checks if the current logged user has completed the quiz their currently trying to access
-  checkIfQuizCompleted(topic, user_id, auth) {
-    return fetch(`${config.API_ENDPOINT}/answers/${topic}/${user_id}`, {
+  checkIfQuizCompleted(question_id, user_id, auth) {
+    return fetch(`${config.API_ENDPOINT}/answers/${question_id}/${user_id}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',

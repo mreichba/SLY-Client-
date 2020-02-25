@@ -23,7 +23,7 @@ class App extends React.Component {
             <PublicRoute exact path='/Login' component={Login} />
             <PublicRoute exact path='/Register' component={Register} />
             <PrivateRoute exact path='/Dashboard' component={Dashboard} />
-            <PrivateRoute path='/quiz/:topic' component={Quiz} />
+            <PrivateRoute path='/quiz/:question_id' component={Quiz} />
             <Route component={Boundary} />
           </Switch>
         </ContextProvider>
