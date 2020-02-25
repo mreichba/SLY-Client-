@@ -8,7 +8,7 @@ export default class Register extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -54,19 +54,19 @@ export default class Register extends React.Component {
         <p>{this.state.error ? <h5>{this.state.error}</h5> : ''}</p>
         <form onSubmit={this.onLogin}>
           <label htmlFor='FirstName'>First Name</label>
-          <input type='text' required name='FirstName' />
+          <input type='text' required name='FirstName' placeholder="John" />
 
           <label htmlFor='LastName'>Last Name</label>
-          <input type='text' required name='LastName' />
+          <input type='text' required name='LastName' placeholder="Smith" />
 
           <label htmlFor='Email'>Email</label>
-          <input type='email' required name='Email' />
+          <input type='email' required name='Email' placeholder="john.smith@gmail.com" />
 
           <label htmlFor='Username'>Username</label>
-          <input type='text' required name='Username' />
+          <input type='text' required name='Username' placeholder="JSmith" />
 
           <label htmlFor='Password'>Password</label>
-          <input type='password' required name='Password' />
+          <input type='password' required name='Password' placeholder="Password1!" />
 
           <div>
             <button type='submit' className='Reg_button'>

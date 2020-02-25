@@ -61,7 +61,7 @@ class Dashboard extends React.Component {
           </h1>
           <div className='dash-menu'>
             <button onClick={this.toggleSlide} className='dash-slide'>
-              <i class='fas fa-chevron-left'></i>
+              <i className='fas fa-chevron-left'></i>
             </button>
             <SlideMenu toggleSlide={this.toggleSlide} open={this.state.open} />
           </div>
