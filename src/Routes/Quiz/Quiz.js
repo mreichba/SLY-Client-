@@ -38,11 +38,9 @@ export default class Quiz extends React.Component {
           TokenService.getAuthToken()
         )
           .then(result => {
-            console.log('i ran 2');
             this.setState({ quiz: result });
           })
           .then(() => {
-            console.log('i ran 2');
             QuizService.getQuizAnswers(
               this.props.match.params.question_id,
               TokenService.getAuthToken()
