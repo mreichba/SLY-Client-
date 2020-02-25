@@ -1,4 +1,5 @@
 import React from 'react';
+import './InitialQuestions.css'
 
 export default class Birthdate extends React.Component {
   render() {

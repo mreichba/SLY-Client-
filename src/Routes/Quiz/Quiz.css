@@ -1,0 +1,19 @@
+.quizH1{
+margin-top: 20px;
+}
+
+.quizSelect{
+  margin: 40px auto 40px;
+}
+
+.quizSubmit {
+  background-color: rgb(28, 11, 56);
+  border: hotpink 1px solid;
+  color: white;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto 20px;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+

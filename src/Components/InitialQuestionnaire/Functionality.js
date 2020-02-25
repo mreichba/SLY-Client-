@@ -5,6 +5,7 @@ import Nationailty from './Nationality';
 import Gender from './Gender';
 import CollegeGraduate from './CollegeGraduate';
 import Final from './Final';
+import './InitialQuestions.css'
 
 export default class Questionnaire extends React.Component {
   constructor(props) {

@@ -1,6 +1,7 @@
 .login-header {
   margin-bottom: 30px;
 }
+
 .new {
   color: blue;
 }
@@ -14,4 +15,12 @@
   margin: 10px auto 20px;
   padding: 5px 20px;
   font-size: 20px;
+}
+
+.loginLabel {
+margin: 0;
+}
+
+.loginInput {
+  margin: 10px 0 20px;
 }
