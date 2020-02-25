@@ -1,12 +1,12 @@
 import React from 'react';
-import Context from '../Context/Context';
+import Context from '../../Components/Context/Context';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
-import SlideMenu from '../Slide-Menu/Slide-Menu';
+import SlideMenu from '../../Components/Slide-Menu/Slide-Menu';
 import QuizService from '../../Helpers/QuizService';
-import InitialQuiz from '../InitialQuestionnaire/Functionality';
+import InitialQuiz from '../../Components/InitialQuestionnaire/Functionality';
 import TokenService from '../../Helpers/TokenService';
-import QuizContainer from '../QuizContainer/QuizContainer';
+import QuizContainer from '../../Components/QuizContainer/QuizContainer';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -73,7 +73,10 @@ class Dashboard extends React.Component {
             STATS GO HERE
           </div>
           <div className='quizArea'>
-            QUIZES GO HERE
+            <h3 className='quizHeader'>Quizes</h3>
+            <div className='quizContents'>
+              <QuizContainer />
+            </div>
           </div>
         </div>
       );
