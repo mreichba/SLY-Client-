@@ -27,19 +27,21 @@ export default class QuizContainer extends React.Component {
   }
 
   // always checking for a new view val from parent
-  componentDidUpdate() {
-    if (this.props.quizView === 'incomplete') {
-      QuizHelper.getNonCompleted(
-        this.props.quizView,
-        TokenService.getAuthToken()
-      ).then(res => this.setState({ quizzes: res, isLoading: false }));
-    } else if (this.props.quizView === 'completed') {
-      QuizHelper.getCompleted(
-        this.props.quizView,
-        TokenService.getAuthToken()
-      ).then(res => this.setState({ quizzes: res, isLoading: false }));
-    } else if (this.props.quizView === 'topic') {
-      console.log('topic api call here');
+  componentDidUpdate(prevState) {
+    if (prevState.quizView !== this.props.quizView) {
+      if (this.props.quizView === 'incomplete') {
+        QuizHelper.getNonCompleted(
+          this.props.quizView,
+          TokenService.getAuthToken()
+        ).then(res => this.setState({ quizzes: res, isLoading: false }));
+      } else if (this.props.quizView === 'completed') {
+        QuizHelper.getCompleted(
+          this.props.quizView,
+          TokenService.getAuthToken()
+        ).then(res => this.setState({ quizzes: res, isLoading: false }));
+      } else if (this.props.quizView === 'topic') {
+        console.log('topic api call here');
+      }
     }
   }
 
