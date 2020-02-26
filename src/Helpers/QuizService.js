@@ -26,18 +26,6 @@ const QuizService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  // TEMP API CALL
-  getAllQuizes(auth) {
-    return fetch(`${config.API_ENDPOINT}/questions/`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        Authorization: `Bearer ${auth}`
-      }
-    }).then(res =>
-      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
-    );
-  },
   // api call that returns all the questions and answer selections for a given topic
   getQuizByTopic(topic, auth) {
     return fetch(`${config.API_ENDPOINT}/questions/topic/${topic}`, {
@@ -87,8 +75,8 @@ const QuizService = {
     );
   },
   // api call that returns all the quizes the currently logged in user HASN'T completed currently
-  getNonCompleted(user_id, auth) {
-    return fetch(`${config.API_ENDPOINT}/initial/noncompleted/${user_id}`, {
+  getNonCompleted(status, auth) {
+    return fetch(`${config.API_ENDPOINT}/questions/quizStatus/${status}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -99,8 +87,8 @@ const QuizService = {
     );
   },
   // api call that returns all the quizes the currently logged in user HAS completed
-  getCompleted(user_id, auth) {
-    return fetch(`${config.API_ENDPOINT}/questions/completed/${user_id}`, {
+  getCompleted(status, auth) {
+    return fetch(`${config.API_ENDPOINT}/questions/quizStatus/${status}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',

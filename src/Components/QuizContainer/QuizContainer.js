@@ -11,47 +11,59 @@ export default class QuizContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allQuizes: [],
-      nonCompletedQuizes: [],
-      completedQuizes: []
+      isLoading: true,
+      quizzes: []
     };
   }
 
   // when the component mounts the app makes api calls to get the users completed/non-completed
   // quizes from the database and saves them in state
   componentDidMount() {
-    QuizHelper.getAllQuizes(TokenService.getAuthToken()).then(res =>
-      this.setState({ allQuizes: res })
-    );
-    // QuizHelper.getNonCompleted(
-    //   this.context.user.id,
-    //   TokenService.getAuthToken()
-    // ).then(res => this.setState({ nonCompletedQuizes: res }));
-    // QuizHelper.getCompleted(
-    //   this.context.user.id,
-    //   TokenService.getAuthToken()
-    // ).then(res => this.setState({ completedQuizes: res }));
+    // always gonna mount as incomplete because of initial state val
+    QuizHelper.getNonCompleted(
+      this.props.quizView,
+      TokenService.getAuthToken()
+    ).then(res => this.setState({ quizzes: res, isLoading: false }));
   }
 
-  render() {
-    return (
-      <div className='QuizContainer'>
+  // always checking for a new view val from parent
+  componentDidUpdate() {
+    if (this.props.quizView === 'incomplete') {
+      QuizHelper.getNonCompleted(
+        this.props.quizView,
+        TokenService.getAuthToken()
+      ).then(res => this.setState({ quizzes: res, isLoading: false }));
+    } else if (this.props.quizView === 'completed') {
+      QuizHelper.getCompleted(
+        this.props.quizView,
+        TokenService.getAuthToken()
+      ).then(res => this.setState({ quizzes: res, isLoading: false }));
+    } else if (this.props.quizView === 'topic') {
+      console.log('topic api call here');
+    }
+  }
+
+  ifLoading = () => {
+    if (this.state.isLoading) {
+      return <h1>Loading...</h1>;
+    } else {
+      return (
         <ul className='quizUL'>
-          {this.state.allQuizes.map((quiz, idx) => {
+          {this.state.quizzes.map(quiz => {
             return (
-              <Link to={`/quiz/${quiz.id}`} key={idx}>
+              <Link to={`/quiz/${quiz.id}`} key={quiz.id}>
                 <li className='quizQuestion'>
                   {quiz.question}
-                  {/* <div className='quizDesc'> */}
                   <p className='quizTopic'>{quiz.topic}</p>
-                  {/* <p className='quizAnswered'>{quiz.answered}</p> */}
-                  {/* </div> */}
                 </li>
               </Link>
             );
           })}
         </ul>
-      </div>
-    );
+      );
+    }
+  };
+  render() {
+    return <div className='QuizContainer'>{this.ifLoading()}</div>;
   }
 }
