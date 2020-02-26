@@ -43,10 +43,11 @@
   height: 200px;
   width: 70%;
   margin: 4%;
+  margin-top: 10px;
 }
 
 .quizArea{
-  border: red 1px solid;
+  /* border: red 1px solid; */
   height: 450px;
   overflow: scroll;
   width: 70%;
@@ -66,7 +67,7 @@
   justify-content: space-evenly;
   width: 100%;
   height: auto;
-  border: 1px dashed black;
+  /* border: 1px dashed black; */
   align-items: center;
 }
 
