@@ -3,6 +3,7 @@ import TokenService from '../../Helpers/TokenService';
 import QuizService from '../../Helpers/QuizService';
 import { Link } from 'react-router-dom';
 import Context from '../../Components/Context/Context';
+import './Quiz.css'
 
 export default class Quiz extends React.Component {
   static contextType = Context;
@@ -96,16 +97,16 @@ export default class Quiz extends React.Component {
       return (
         <div>
           <form onSubmit={this.submitAnswer}>
-            <h1>{this.state.quiz.question}</h1>
-            <select required name='answerSelection'>
+            <h1 className='quizH1'>{this.state.quiz.question}</h1>
+            <select required name='answerSelection' className='quizSelect'>
               <option selected disabled value=''>
                 Choose an option
               </option>
               {this.state.quizAnswers.map(answer => {
                 return <option value={answer.id}>{answer.answer}</option>;
               })}
-            </select>
-            <button type='submit'>submit</button>
+            </select><br />
+            <button type='submit' className='quizSubmit'>submit</button>
           </form>
         </div>
       );
