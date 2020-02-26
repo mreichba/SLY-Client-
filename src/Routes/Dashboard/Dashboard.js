@@ -1,6 +1,5 @@
 import React from 'react';
 import Context from '../../Components/Context/Context';
-import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import SlideMenu from '../../Components/Slide-Menu/Slide-Menu';
 import QuizService from '../../Helpers/QuizService';
@@ -13,21 +12,13 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       open: false,
-      isLoading: true
+      isLoading: true,
+      quizView: 'incomplete'
     };
   }
   static contextType = Context;
-  static defaultProps = {
-    language: {
-      name: 'Default Language',
-      total_score: 0
-    },
-    user: {
-      user: {
-        name: 'Default username'
-      }
-    }
-  };
+
+  toggleQuizView = view => this.setState({ quizView: view });
 
   // toggles slide component open/close
   toggleSlide = () => {
@@ -61,26 +52,26 @@ class Dashboard extends React.Component {
           </h1>
           <div className='dash-menu'>
             <button onClick={this.toggleSlide} className='dash-slide'>
-              <i className='fas fa-chevron-left'></i>
+              <i class='fas fa-chevron-left'></i>
             </button>
-            <SlideMenu toggleSlide={this.toggleSlide} open={this.state.open} />
+            <SlideMenu
+              toggleQuizView={this.toggleQuizView}
+              toggleSlide={this.toggleSlide}
+              open={this.state.open}
+            />
           </div>
 
           <h2 className='dash-welcome'>
             Welcome back, {this.context.user.name}!
           </h2>
-          <h3 className='quizHeader'>Statistics</h3>
-          <div className='statsArea'>
-
-          </div>
+          <div className='statsArea'>STATS GO HERE</div>
 
           <h3 className='quizHeader'>Quizzes</h3>
           <div className='quizArea'>
             <div className='quizContents'>
-              <QuizContainer />
+              <QuizContainer quizView={this.state.quizView} />
             </div>
           </div>
-
         </div>
       );
     } else {
