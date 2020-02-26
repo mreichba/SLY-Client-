@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
-import App from './App';
+import { BrowserRouter, Route } from 'react-router-dom'
+import Quiz from './Quiz';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <BrowserRouter>
-      <App />
+      <Route>
+        render={componentProps => {
+          return <Quiz {...componentProps} />
+        }}
+      </Route>
     </BrowserRouter>,
-    div
-  );
+    div);
   ReactDOM.unmountComponentAtNode(div);
 });
