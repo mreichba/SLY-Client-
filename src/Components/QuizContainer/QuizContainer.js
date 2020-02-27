@@ -20,7 +20,7 @@ export default class QuizContainer extends React.Component {
   // quizes from the database and saves them in state
   componentDidMount() {
     // always gonna mount as incomplete because of initial state val
-    QuizHelper.getNonCompleted(
+    QuizHelper.getSortedQuizzes(
       this.props.quizView,
       TokenService.getAuthToken()
     ).then(res => this.setState({ quizzes: res, isLoading: false }));
@@ -30,12 +30,12 @@ export default class QuizContainer extends React.Component {
   componentDidUpdate(prevState) {
     if (prevState.quizView !== this.props.quizView) {
       if (this.props.quizView === 'incomplete') {
-        QuizHelper.getNonCompleted(
+        QuizHelper.getSortedQuizzes(
           this.props.quizView,
           TokenService.getAuthToken()
         ).then(res => this.setState({ quizzes: res, isLoading: false }));
       } else if (this.props.quizView === 'completed') {
-        QuizHelper.getCompleted(
+        QuizHelper.getSortedQuizzes(
           this.props.quizView,
           TokenService.getAuthToken()
         ).then(res => this.setState({ quizzes: res, isLoading: false }));

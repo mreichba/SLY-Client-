@@ -2,8 +2,8 @@ import config from '../config';
 
 const AccountService = {
   // api call that handles delete account request
-  deleteAccount(user_id, auth) {
-    return fetch(`${config.API_ENDPOINT}/users/${user_id}`, {
+  deleteAccount(auth) {
+    return fetch(`${config.API_ENDPOINT}/users`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${auth}`
@@ -11,8 +11,8 @@ const AccountService = {
     });
   },
   // api call that handles account update request
-  updateAccount(updatedData, user_id, auth) {
-    return fetch(`${config.API_ENDPOINT}/users/${user_id}`, {
+  updateAccount(updatedData, auth) {
+    return fetch(`${config.API_ENDPOINT}/users`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',

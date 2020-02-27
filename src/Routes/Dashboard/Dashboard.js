@@ -28,7 +28,6 @@ class Dashboard extends React.Component {
   // on mount makes a api call to the database to see if the user has completed the initial quiz
   async componentDidMount() {
     const status = await QuizService.initialQuizStatus(
-      this.context.user.id,
       TokenService.getAuthToken()
     );
     this.context.setQuizStatus(status);
