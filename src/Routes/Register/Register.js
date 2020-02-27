@@ -51,7 +51,7 @@ export default class Register extends React.Component {
     return (
       <div className='Register'>
         <h1 className='reg-header'>Register</h1>
-        <p>{this.state.error ? <h5>{this.state.error}</h5> : ''}</p>
+        <p className='error'>{this.state.error ? <h5>{this.state.error}</h5> : ''}</p>
         <form onSubmit={this.onLogin}>
           <label htmlFor='FirstName'>First Name</label>
           <input type='text' required name='FirstName' placeholder="John" />
