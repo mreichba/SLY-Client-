@@ -1,5 +1,5 @@
 ## Someone Like You App (Client)
-![SLY Logo](src/Images/sly-logo.png)
+![SLY Logo](src/Media/sly-logo.png)
 Created by: Anthony Bostic, Stephen Schab, Mason Reichbauer, and Krystal Noweski
 ---
 ## Repo & Live Links
@@ -17,10 +17,10 @@ Someone Like You is a quiz app that allows the user to register an account, logi
 ![Landing Page](https://i.imgur.com/Rymob9b.png)
 
 ### Register Page
-<!-- ![Register Page](src/Media/Register.PNG) -->
+![Register Page](https://i.imgur.com/LJ8NLDl.png)
 
 ### Login Page
-<!-- ![Login Page](src/Media/Login.PNG) -->
+![Login Page](https://i.imgur.com/nWL5qKJ.png)
 
 ### Dashboard Page
 <!-- ![Dashboard Page](src/Media/Dashboard.PNG) -->
