@@ -24,22 +24,37 @@ export default class SlideMenu extends React.Component {
               {TokenService.hasAuthToken() ? (
                 <div className='Header__logged-in'>
                   <div className='dropdown'>
-                    <button className='dropbtn'>New Questions</button>
-                    <button className='dropbtn'>Completed Questions</button>
-                    <button className='dropbtn'>Genres</button>
+                    <button
+                      className='dropbtn'
+                      onClick={() => this.props.toggleQuizView('incomplete')}
+                    >
+                      New Questions
+                    </button>
+                    <button
+                      className='dropbtn'
+                      onClick={() => this.props.toggleQuizView('completed')}
+                    >
+                      Completed Questions
+                    </button>
+                    <button
+                      className='dropbtn'
+                      onClick={() => this.props.toggleQuizView('topic')}
+                    >
+                      Genres
+                    </button>
                     <div className='dropdown-content'></div>
                   </div>
                 </div>
               ) : (
-                  <div className='Header__logged-out'>
-                    <Link className='mobile-Login' to='/login'>
-                      Log in
+                <div className='Header__logged-out'>
+                  <Link className='mobile-Login' to='/login'>
+                    Log in
                   </Link>
-                    <Link className='mobile-Register' to='/register'>
-                      Register
+                  <Link className='mobile-Register' to='/register'>
+                    Register
                   </Link>
-                  </div>
-                )}
+                </div>
+              )}
             </div>
           </div>
         </div>

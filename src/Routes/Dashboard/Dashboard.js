@@ -1,6 +1,5 @@
 import React from 'react';
 import Context from '../../Components/Context/Context';
-import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import SlideMenu from '../../Components/Slide-Menu/Slide-Menu';
 import QuizService from '../../Helpers/QuizService';
@@ -13,21 +12,13 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       open: false,
-      isLoading: true
+      isLoading: true,
+      quizView: 'incomplete'
     };
   }
   static contextType = Context;
-  static defaultProps = {
-    language: {
-      name: 'Default Language',
-      total_score: 0
-    },
-    user: {
-      user: {
-        name: 'Default username'
-      }
-    }
-  };
+
+  toggleQuizView = view => this.setState({ quizView: view });
 
   // toggles slide component open/close
   toggleSlide = () => {
@@ -37,7 +28,6 @@ class Dashboard extends React.Component {
   // on mount makes a api call to the database to see if the user has completed the initial quiz
   async componentDidMount() {
     const status = await QuizService.initialQuizStatus(
-      this.context.user.id,
       TokenService.getAuthToken()
     );
     this.context.setQuizStatus(status);
@@ -63,23 +53,24 @@ class Dashboard extends React.Component {
             <button onClick={this.toggleSlide} className='dash-slide'>
               <i class='fas fa-chevron-left'></i>
             </button>
-            <SlideMenu toggleSlide={this.toggleSlide} open={this.state.open} />
+            <SlideMenu
+              toggleQuizView={this.toggleQuizView}
+              toggleSlide={this.toggleSlide}
+              open={this.state.open}
+            />
           </div>
 
           <h2 className='dash-welcome'>
             Welcome back, {this.context.user.name}!
           </h2>
-          <div className='statsArea'>
-            STATS GO HERE
-          </div>
+          <div className='statsArea'>STATS GO HERE</div>
 
           <h3 className='quizHeader'>Quizzes</h3>
           <div className='quizArea'>
             <div className='quizContents'>
-              <QuizContainer />
+              <QuizContainer quizView={this.state.quizView} />
             </div>
           </div>
-
         </div>
       );
     } else {

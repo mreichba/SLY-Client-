@@ -2,12 +2,13 @@ import React from 'react';
 import QuizService from '../../Helpers/QuizService';
 import Context from '../Context/Context';
 import TokenService from '../../Helpers/TokenService';
+import './InitialQuestions.css'
 
 export default class Final extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 

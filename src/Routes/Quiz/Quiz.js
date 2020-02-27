@@ -3,6 +3,7 @@ import TokenService from '../../Helpers/TokenService';
 import QuizService from '../../Helpers/QuizService';
 import { Link } from 'react-router-dom';
 import Context from '../../Components/Context/Context';
+import './Quiz.css';
 
 export default class Quiz extends React.Component {
   static contextType = Context;
@@ -20,7 +21,6 @@ export default class Quiz extends React.Component {
     // runs a api call to the api with the question id & user's id to check if the user has completed the quiz before
     QuizService.checkIfQuizCompleted(
       this.props.match.params.question_id,
-      this.context.user.id,
       TokenService.getAuthToken()
     ).then(result => {
       if (result) {
@@ -45,10 +45,7 @@ export default class Quiz extends React.Component {
               this.props.match.params.question_id,
               TokenService.getAuthToken()
             ).then(result =>
-              this.setState({
-                quizAnswers: result,
-                isLoading: false
-              })
+              this.setState({ quizAnswers: result, isLoading: false })
             );
           });
       }
@@ -64,14 +61,17 @@ export default class Quiz extends React.Component {
   submitAnswer = ev => {
     ev.preventDefault();
     const { answerSelection } = ev.target;
-    console.log('quiz id: ', this.state.quiz.id);
-    console.log('answer id: ', answerSelection.value);
-    console.log('user id: ', this.context.user.id);
-    // QuizService.submitAnswer(
-    //   this.state.quiz.id,
-    //   answerSelection.value,
-    //   this.context.user.id
-    // );
+    QuizService.postAnswer(
+      this.state.quiz.id,
+      answerSelection.value,
+      TokenService.getAuthToken()
+    )
+      .then(res => {
+        this.onSuccessfulSubmittion();
+      })
+      .catch(res => {
+        this.setState({ error: res.error });
+      });
   };
 
   ifLoading = () => {
@@ -99,8 +99,8 @@ export default class Quiz extends React.Component {
       return (
         <div>
           <form onSubmit={this.submitAnswer}>
-            <h1>{this.state.quiz.question}</h1>
-            <select required name='answerSelection'>
+            <h1 className='quizH1'>{this.state.quiz.question}</h1>
+            <select required name='answerSelection' className='quizSelect'>
               <option selected disabled value=''>
                 Choose an option
               </option>
@@ -108,7 +108,10 @@ export default class Quiz extends React.Component {
                 return <option value={answer.id}>{answer.answer}</option>;
               })}
             </select>
-            <button type='submit'>submit</button>
+            <br />
+            <button type='submit' className='quizSubmit'>
+              submit
+            </button>
           </form>
         </div>
       );
