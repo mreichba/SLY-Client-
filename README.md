@@ -1,5 +1,5 @@
 ## Someone Like You App (Client)
-![SLY Logo](src/Media/sly-logo.PNG)
+![SLY Logo](src/Media/sly-logo.PNG)<br/>
 Created by: Anthony Bostic, Stephen Schab, Mason Reichbauer, and Krystal Noweski
 ---
 ## Repo & Live Links
