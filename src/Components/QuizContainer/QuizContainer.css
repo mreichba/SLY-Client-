@@ -47,7 +47,7 @@
   justify-content: space-evenly;
   width: 90%;
   height: 100%;
-  border: 1px dashed black;
+  /* border: 1px dashed black; */
 }
 
 @media screen and (max-width: 500px) {

@@ -9,7 +9,7 @@ export default class Login extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -52,15 +52,15 @@ export default class Login extends React.Component {
         <h1 className='login-header'>Login</h1>
         <p>{this.state.error ? <h5>{this.state.error}</h5> : ''}</p>
         <form onSubmit={this.onLogin}>
-          <label htmlFor='Username'>Username</label>
-          <input className='Username' name='username' type='text' required />
+          <label htmlFor='Username' className='loginLabel'>Username</label>
+          <input className='loginInput' name='username' type='text' required />
 
-          <label htmlFor='Password'>Password</label>
+          <label htmlFor='Password' className='loginLabel'>Password</label>
           <input
             type='password'
             name='password'
             required
-            className='Password'
+            className='loginInput'
           />
 
           <div>
