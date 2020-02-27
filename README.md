@@ -14,7 +14,7 @@ Someone Like You is a quiz app that allows the user to register an account, logi
 ## Image Guide
 
 ### Landing Page
-<!-- ![Landing Page](src/Media/Landing.PNG) -->
+![Landing Page](https://imgur.com/a/poBiILY)
 
 ### Register Page
 <!-- ![Register Page](src/Media/Register.PNG) -->
