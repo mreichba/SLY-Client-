@@ -53,9 +53,9 @@ export default class Quiz extends React.Component {
   }
 
   // when a user successfully submits their answer the app will push them back to the dashboard
-  onSuccessfulSubmittion = () => {
+  onSuccessfulSubmittion = question_id => {
     const { history } = this.props;
-    history.push('/Dashboard');
+    history.push(`/quiz-stats/${question_id}`);
   };
 
   submitAnswer = ev => {
@@ -67,7 +67,7 @@ export default class Quiz extends React.Component {
       TokenService.getAuthToken()
     )
       .then(res => {
-        this.onSuccessfulSubmittion();
+        this.onSuccessfulSubmittion(this.state.quiz.id);
       })
       .catch(res => {
         this.setState({ error: res.error });
