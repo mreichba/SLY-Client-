@@ -1,5 +1,6 @@
 ## Someone Like You App (Client)
 ![SLY Logo](src/Images/sly-logo.png)
+Created by: Anthony Bostic, Stephen Schab, Mason Reichbauer, and Krystal Noweski
 ---
 ## Repo & Live Links
 <!-- [Live Server](https:// TITLE GOES HERE .now.sh/) -->
