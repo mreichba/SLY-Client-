@@ -89,6 +89,7 @@ const QuizService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
+  // submits user's quiz answer to the db
   postAnswer(question_id, answer_id, auth) {
     const answer = { question_id, answer_id };
     return fetch(`${config.API_ENDPOINT}/user_answers`, {
