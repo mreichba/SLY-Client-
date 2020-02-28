@@ -24,52 +24,56 @@ export default class InitialStats extends React.Component {
     } else {
       return (
         <div>
-          <h2>Your Initial Quiz Results</h2>
-          <ul>
+          <ul className='initialUL'>
             <li>
               <h5>Birthday</h5>
+              <p>{this.state.userData.userData.birthdate}</p>
               {Math.floor(
                 (this.state.userData.birthdayMatches /
                   this.state.userData.totalUsers) *
-                  100
+                100
               )}
-              %
+              % of users matched your answer.
             </li>
             <li>
               <h5>Location</h5>
+              <p>{this.state.userData.userData.location}</p>
               {Math.floor(
                 (this.state.userData.locationMatches /
                   this.state.userData.totalUsers) *
-                  100
+                100
               )}
-              %
+              % of users matched your answer.
             </li>
             <li>
               <h5>Nationality</h5>
+              <p>{this.state.userData.userData.nationality}</p>
               {Math.floor(
                 (this.state.userData.nationalityMatches /
                   this.state.userData.totalUsers) *
-                  100
+                100
               )}
-              %
+              % of users matched your answer.
             </li>
             <li>
               <h5>Gender</h5>
+              <p>{this.state.userData.userData.gender}</p>
               {Math.floor(
                 (this.state.userData.genderMatches /
                   this.state.userData.totalUsers) *
-                  100
+                100
               )}
-              %
+              % of users matched your answer.
             </li>
             <li>
               <h5>College Graduates</h5>
+              <p>{this.state.userData.userData.college_graduate}</p>
               {Math.floor(
                 (this.state.userData.collegeGradMatches /
                   this.state.userData.totalUsers) *
-                  100
+                100
               )}
-              %
+              % of users matched your answer.
             </li>
           </ul>
         </div>
