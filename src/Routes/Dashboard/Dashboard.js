@@ -64,10 +64,11 @@ class Dashboard extends React.Component {
           <h2 className='dash-welcome'>
             Welcome back, {this.context.user.name}!
           </h2>
+          <h3 className='quizHeader'>Your Initial Quiz Results</h3>
           <div className='statsArea'>
             <InitialStats />
           </div>
-
+          <hr />
           <h3 className='quizHeader'>Quizzes</h3>
           <div className='quizArea'>
             <div className='quizContents'>
