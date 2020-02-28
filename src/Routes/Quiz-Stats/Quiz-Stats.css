@@ -1,0 +1,14 @@
+.statsQuestion {
+  margin: 20px 0 20px;
+}
+
+.statsCompare {
+  margin: 10px 0 30px; 
+}
+
+.statsPercent {
+  margin: 0 0 30px;
+}
+.quizStatistics h1, h3, p {
+  padding: 0 15px 0;
+}

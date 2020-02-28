@@ -32,18 +32,19 @@ export default class QuizStats extends React.Component {
     // if isLoading is false then it means the api call is complete and the page will render the users quiz stats
     else {
       return (
-        <div>
-          <h1>Your Quiz Results Are In</h1>
-          <h3>{this.state.stats.question}</h3>
+        <div className='quizStatistics'>
+          <h1>Your Quiz Results Are In!</h1>
+          <h3 className='statsQuestion'>{this.state.stats.question}</h3>
           <p>
             You chose {this.state.stats.userAnswer}, the most common answer is{' '}
             {this.state.stats.mostCommonUserAnswer}.
           </p>
-          <p>
+          <p className='statsCompare'>
             {this.state.stats.totalUserAnswers} users have answered this quiz
             and {this.state.stats.matchingAnswers.length} users answered the
             same as you
           </p>
+          <h3 className='statsPercent'>Your answer is matched to {Math.floor(this.state.stats.matchingAnswers.length / this.state.stats.totalUserAnswers * 100)}% of other people</h3>
           <Link to='/Dashboard'>Home</Link>
         </div>
       );
