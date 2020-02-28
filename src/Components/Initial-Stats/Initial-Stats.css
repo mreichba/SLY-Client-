@@ -1,0 +1,31 @@
+.initialUL {
+  display: flex;
+  justify-content: space-evenly;
+  text-decoration: none;
+  flex-wrap: wrap;
+  height: auto;
+  /* border: 1px dotted black; */
+}
+
+.initialUL li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  /* align-items: center; */
+  border: 1px solid rgb(28, 11, 56);
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  background-color: rgb(28, 11, 56);
+  box-shadow:  0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+}
+
+.initialUL p {
+  color: rgb(157,14,210);
+}
+
+
