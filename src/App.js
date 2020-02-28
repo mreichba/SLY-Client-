@@ -11,6 +11,7 @@ import { ContextProvider } from './Components/Context/Context';
 import Nav from './Components/Nav/Nav';
 import Dashboard from './Routes/Dashboard/Dashboard';
 import Quiz from './Routes/Quiz/Quiz';
+import QuizStats from './Routes/Quiz-Stats/Quiz-Stats';
 
 class App extends React.Component {
   render() {
@@ -24,6 +25,10 @@ class App extends React.Component {
             <PublicRoute exact path='/Register' component={Register} />
             <PrivateRoute exact path='/Dashboard' component={Dashboard} />
             <PrivateRoute path='/quiz/:question_id' component={Quiz} />
+            <PrivateRoute
+              path='/quiz-stats/:question_id'
+              component={QuizStats}
+            />
             <Route component={Boundary} />
           </Switch>
         </ContextProvider>
