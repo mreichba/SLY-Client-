@@ -11,6 +11,16 @@ const StatsService = {
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
+  },
+  getInitialQuizStats(auth) {
+    return fetch(`${config.API_ENDPOINT}/stats/initial-stats`, {
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${auth}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
   }
 };
 
