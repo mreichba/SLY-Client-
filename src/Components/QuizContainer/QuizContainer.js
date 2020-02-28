@@ -48,12 +48,27 @@ export default class QuizContainer extends React.Component {
   ifLoading = () => {
     if (this.state.isLoading) {
       return <h1>Loading...</h1>;
-    } else {
+    } else if (this.props.quizView === 'incomplete') {
       return (
         <ul className='quizUL'>
           {this.state.quizzes.map(quiz => {
             return (
               <Link to={`/quiz/${quiz.id}`} key={quiz.id}>
+                <li className='quizQuestion'>
+                  {quiz.question}
+                  <p className='quizTopic'>{quiz.topic}</p>
+                </li>
+              </Link>
+            );
+          })}
+        </ul>
+      );
+    } else if (this.props.quizView === 'completed') {
+      return (
+        <ul className='quizUL'>
+          {this.state.quizzes.map(quiz => {
+            return (
+              <Link to={`/quiz-stats/${quiz.id}`} key={quiz.id}>
                 <li className='quizQuestion'>
                   {quiz.question}
                   <p className='quizTopic'>{quiz.topic}</p>
