@@ -4,7 +4,7 @@
 }
 
 .dash-welcome{
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   font-size: 20px;
 }
 
@@ -88,6 +88,10 @@ hr {
 
   .quizHeader{
     margin: 0 auto 0;
+  }
+
+  hr {
+    width: 90%;
   }
 
   .quizArea{
