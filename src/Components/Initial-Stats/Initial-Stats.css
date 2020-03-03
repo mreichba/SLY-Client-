@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   height: auto;
   margin: 10px;
-  /* border: 1px dotted black; */
 }
 
 .initialUL li{
@@ -13,7 +12,6 @@
   flex-direction: column;
   justify-content: center;
   justify-content: space-around;
-  /* align-items: center; */
   border: 1px solid hotpink;
   border-radius: 100%;
   width: 150px;

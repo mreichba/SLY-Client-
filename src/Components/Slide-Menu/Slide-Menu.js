@@ -36,12 +36,6 @@ export default class SlideMenu extends React.Component {
                     >
                       Completed Questions
                     </button>
-                    {/* <button
-                      className='dropbtn'
-                      onClick={() => this.props.toggleQuizView('topic')}
-                    >
-                      Genres
-                    </button> */}
                     <div className='dropdown-content'></div>
                   </div>
                 </div>
