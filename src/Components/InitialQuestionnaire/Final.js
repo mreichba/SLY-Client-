@@ -2,13 +2,13 @@ import React from 'react';
 import QuizService from '../../Helpers/QuizService';
 import Context from '../Context/Context';
 import TokenService from '../../Helpers/TokenService';
-import './InitialQuestions.css'
+import './InitialQuestions.css';
 
 export default class Final extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => { }
+      push: () => {}
     }
   };
 
@@ -52,7 +52,7 @@ export default class Final extends React.Component {
       const answers = {
         user_id: this.context.user.id,
         birthdate: this.props.values.Birthdate,
-        location: this.props.values.Location,
+        location: this.props.values.Location.toLowerCase(),
         nationality: this.props.values.Nationality,
         gender: this.props.values.Gender,
         college_graduate: this.props.values.CollegeGraduate
