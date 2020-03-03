@@ -23,7 +23,7 @@ Someone Like You is a quiz app that allows the user to register an account, logi
 ![Login Page](https://i.imgur.com/nWL5qKJ.png)
 
 ### Dashboard Page
-<!-- ![Dashboard Page](src/Media/Dashboard.PNG) -->
+![Dashboard Page](https://i.imgur.com/CYjSV5y.png)
 
 
 ## Technology Used
