@@ -40,7 +40,7 @@ export default class InitialStats extends React.Component {
             </li>
             <li>
               <h5>Location</h5>
-              <p>{this.state.userData.userData.location}</p>
+              <p>{this.state.userData.userData.location.charAt(0).toUpperCase() + this.state.userData.userData.location.substring(1)}</p>
               {Math.floor(
                 (this.state.userData.locationMatches /
                   this.state.userData.totalUsers) *

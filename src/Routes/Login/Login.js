@@ -50,7 +50,7 @@ export default class Login extends React.Component {
     return (
       <div className='Login'>
         <h1 className='login-header'>Login</h1>
-        <p>{this.state.error ? <h5>{this.state.error}</h5> : ''}</p>
+        <p className='error'>{this.state.error ? <h5>{this.state.error}</h5> : ''}</p>
         <form onSubmit={this.onLogin}>
           <label htmlFor='Username' className='loginLabel'>Username</label>
           <input className='loginInput' name='username' type='text' required />
