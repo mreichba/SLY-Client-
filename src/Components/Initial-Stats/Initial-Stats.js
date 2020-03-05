@@ -15,7 +15,10 @@ export default class InitialStats extends React.Component {
   componentDidMount() {
     StatsService.getInitialQuizStats(
       TokenService.getAuthToken()
-    ).then(response => this.setState({ userData: response, isLoading: false }));
+    ).then(response => {
+      this.setState({ userData: response, isLoading: false });
+      console.log(response);
+    });
   }
 
   isLoading = () => {
