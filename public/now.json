@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "alias": "someone-like-you",
+  "name": "someone-like-you-app",
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": ".*",
+      "dest": "/index.html"
+    }
+  ]
+}
