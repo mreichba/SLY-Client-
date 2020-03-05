@@ -3,7 +3,7 @@
 Created by: Anthony Bostic, Stephen Schab, Mason Reichbauer, and Krystal Noweski
 ---
 ## Repo & Live Links
-<!-- [Live Server](https:// TITLE GOES HERE .now.sh/) -->
+[Live Server](https://someone-like-you.now.sh/)
 [Client Repo](https://github.com/thinkful-ei-iguana/MASK-SLY-client)
 [Server Repo](https://github.com/thinkful-ei-iguana/MASK-SLY-API)
 
