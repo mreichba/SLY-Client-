@@ -47,7 +47,7 @@ export default class QuizContainer extends React.Component {
 
   isEmpty = () => {
     return (
-      <div>
+      <div className='noQuizes'>
         Looks like you have completed all the quizzes please check back at a
         later time for some new content.
       </div>

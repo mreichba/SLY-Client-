@@ -1,5 +1,11 @@
 .statsQuestion {
   margin: 20px 0 20px;
+  color: rgb(100, 4, 109);
+  font-size: 24px;
+}
+
+.quizStatistics h1, h3, p {
+  padding: 0 15px 0;
 }
 
 .statsCompare {
@@ -7,8 +13,51 @@
 }
 
 .statsPercent {
-  margin: 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  border: 1px solid hotpink;
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 40px;
+  padding: 10px;
+  color: white;
+  background-color: rgb(28, 11, 56);
+  box-shadow:  0px 11px 21px -8px rgba(0, 0, 0, 0.5);
 }
-.quizStatistics h1, h3, p {
-  padding: 0 15px 0;
+
+.quizStatistics p {
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.statsPercent p {
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.statsPercent h3 {
+  font-size: 24px;
+  color: rgb(157,14,210);
+}
+
+
+.homeLink {
+  background-color: rgb(28, 11, 56);
+  text-decoration: none;
+  width: 50px;
+  border: hotpink 1px solid;
+  color: white;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto 10px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.homeLink a {
+  text-decoration: none;
+  color: white;
 }
