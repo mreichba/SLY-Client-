@@ -10,6 +10,7 @@ export default class Nationality extends React.Component {
           <select
             name='Nationality'
             defaultValue='Choose an option'
+            value={this.props.values.Nationality}
             required
             onChange={this.props.handleChange('Nationality')}
           >

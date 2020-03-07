@@ -10,6 +10,7 @@ export default class Birthdate extends React.Component {
           <input
             required
             type='date'
+            value={this.props.values.Birthdate}
             onChange={this.props.handleChange('Birthdate')}
           />
           <div>

@@ -11,6 +11,7 @@ export default class Location extends React.Component {
             name='Location'
             type='text'
             placeholder="Ex: Florida"
+            value={this.props.values.Location}
             required
             onChange={this.props.handleChange('Location')}
           />

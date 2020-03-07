@@ -11,6 +11,7 @@ export default class Gender extends React.Component {
             name='Gender'
             required
             defaultValue='Choose an option'
+            value={this.props.values.Gender}
             onChange={this.props.handleChange('Gender')}
           >
             <option disabled value='Choose an option'>
