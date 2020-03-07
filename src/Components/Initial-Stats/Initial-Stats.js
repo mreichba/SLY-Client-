@@ -27,53 +27,53 @@ export default class InitialStats extends React.Component {
           <ul className='initialUL'>
             <li>
               <h5>Birthday</h5>
-              <p>{this.state.userData.userData.birthdate}</p>
-              {Math.floor(
+              <p className='ans'>{this.state.userData.userData.birthdate}</p>
+              <p>{Math.floor(
                 (this.state.userData.birthdayMatches /
                   this.state.userData.totalUsers) *
                 100
               )}
-              % of users matched your answer.
+                % of users matched your answer.</p>
             </li>
             <li>
               <h5>Location</h5>
-              <p>{this.state.userData.userData.location.charAt(0).toUpperCase() + this.state.userData.userData.location.substring(1)}</p>
-              {Math.floor(
+              <p className='ans'>{this.state.userData.userData.location.charAt(0).toUpperCase() + this.state.userData.userData.location.substring(1)}</p>
+              <p>{Math.floor(
                 (this.state.userData.locationMatches /
                   this.state.userData.totalUsers) *
                 100
               )}
-              % of users matched your answer.
+                % of users matched your answer.</p>
             </li>
             <li>
               <h5>Nationality</h5>
-              <p>{this.state.userData.userData.nationality}</p>
-              {Math.floor(
+              <p className='ans'>{this.state.userData.userData.nationality}</p>
+              <p>{Math.floor(
                 (this.state.userData.nationalityMatches /
                   this.state.userData.totalUsers) *
                 100
               )}
-              % of users matched your answer.
+                % of users matched your answer.</p>
             </li>
             <li>
               <h5>Gender</h5>
-              <p>{this.state.userData.userData.gender}</p>
-              {Math.floor(
+              <p className='ans'>{this.state.userData.userData.gender}</p>
+              <p>{Math.floor(
                 (this.state.userData.genderMatches /
                   this.state.userData.totalUsers) *
                 100
               )}
-              % of users matched your answer.
+                % of users matched your answer.</p>
             </li>
             <li>
-              <h5>College Graduates</h5>
-              <p>{this.state.userData.userData.college_graduate}</p>
-              {Math.floor(
+              <h5>College Graduate</h5>
+              <p className='ans'>{this.state.userData.userData.college_graduate}</p>
+              <p>{Math.floor(
                 (this.state.userData.collegeGradMatches /
                   this.state.userData.totalUsers) *
                 100
               )}
-              % of users matched your answer.
+                % of users matched your answer.</p>
             </li>
           </ul>
         </div>
