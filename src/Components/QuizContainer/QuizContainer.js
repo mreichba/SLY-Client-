@@ -45,9 +45,23 @@ export default class QuizContainer extends React.Component {
     }
   }
 
+  isEmpty = () => {
+    return (
+      <div>
+        Looks like you have completed all the quizzes please check back at a
+        later time for some new content.
+      </div>
+    );
+  };
+
   ifLoading = () => {
     if (this.state.isLoading) {
       return <h1>Loading...</h1>;
+    } else if (
+      this.props.quizView === 'incomplete' &&
+      this.state.quizzes.length === 0
+    ) {
+      return this.isEmpty();
     } else if (this.props.quizView === 'incomplete') {
       return (
         <ul className='quizUL'>
