@@ -8,7 +8,7 @@ export default class Final extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -75,7 +75,8 @@ export default class Final extends React.Component {
           </li>
           <li>
             <h5>Location:</h5>
-            <p>{this.props.values.Location}</p>
+            <p>{this.props.values.Location.charAt(0).toUpperCase() +
+              this.props.values.Location.substring(1)}</p>
           </li>
           <li>
             <h5>Nationality:</h5>

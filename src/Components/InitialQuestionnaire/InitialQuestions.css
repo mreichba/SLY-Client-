@@ -14,11 +14,17 @@
 }
 
 .Final h5{
-  font-size: 18px;
+  font-size: 24px;
+  margin: 10px;
 }
 
 .Final p {
   font-size: 16px;
   margin: 5px 0 10px;
+  font-weight: bolder;
+  color: rgb(161, 3, 11)
 }
 
+.Final ul {
+  list-style-type: none;
+}
