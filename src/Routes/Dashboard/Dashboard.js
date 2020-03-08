@@ -1,7 +1,6 @@
 import React from 'react';
 import Context from '../../Components/Context/Context';
 import './Dashboard.css';
-import SlideMenu from '../../Components/Slide-Menu/Slide-Menu';
 import QuizService from '../../Helpers/QuizService';
 import InitialQuiz from '../../Components/InitialQuestionnaire/Functionality';
 import TokenService from '../../Helpers/TokenService';
@@ -18,13 +17,13 @@ class Dashboard extends React.Component {
     };
   }
   static contextType = Context;
+  static defaultProps = {
+    history: {
+      push: () => {}
+    }
+  };
 
   toggleQuizView = view => this.setState({ quizView: view });
-
-  // toggles slide component open/close
-  toggleSlide = () => {
-    this.setState(prevState => ({ open: !prevState.open }));
-  };
 
   // on mount makes a api call to the database to see if the user has completed the initial quiz
   async componentDidMount() {
@@ -33,6 +32,12 @@ class Dashboard extends React.Component {
     );
     this.context.setQuizStatus(status);
     this.setState({ isLoading: false });
+  }
+
+  componentDidUpdate() {
+    return this.context.user.idle === true
+      ? this.props.history.push('/Login')
+      : '';
   }
 
   // while the on mount api call is processing it renders loading
@@ -50,16 +55,6 @@ class Dashboard extends React.Component {
             <span className='accent'>L</span>ike{' '}
             <span className='accent'>Y</span>ou
           </h1>
-          <div className='dash-menu'>
-            <button onClick={this.toggleSlide} className='dash-slide'>
-              <i className='fas fa-chevron-left'></i>
-            </button>
-            <SlideMenu
-              toggleQuizView={this.toggleQuizView}
-              toggleSlide={this.toggleSlide}
-              open={this.state.open}
-            />
-          </div>
 
           <h2 className='dash-welcome'>
             Welcome back, {this.context.user.name}!
@@ -69,6 +64,22 @@ class Dashboard extends React.Component {
             <InitialStats />
           </div>
           <hr />
+          <div className='btn-row'>
+            <button
+              type='button'
+              className='quiz-btn'
+              onClick={() => this.toggleQuizView('incomplete')}
+            >
+              New
+            </button>
+            <button
+              type='button'
+              className='quiz-btn2'
+              onClick={() => this.toggleQuizView('completed')}
+            >
+              Completed
+            </button>
+          </div>
           <h3 className='quizHeader'>Quizzes</h3>
           <div className='quizArea'>
             <div className='quizContents'>
