@@ -16,23 +16,24 @@
 }
 
 .btn-row {
-  width: 30%;
-  margin: auto auto;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .quiz-btn,
 .quiz-btn2 {
   background: rgb(28, 11, 56);
-  border-color: hotpink;
+  border: 1px solid hotpink;
   padding: 5px;
   color: #fff;
-  border-radius: 5px;
-  float: left;
-  display: block;
+  border-radius: 3px;
+  margin: 0 10px 0;
+  width: 100px;
 }
 
-.quiz-btn2 {
-  float: right;
+.quiz-btn:hover, .quiz-btn2:hover {
+  background-color: rgb(161, 3, 11);
 }
 
 .dash-prac-button {

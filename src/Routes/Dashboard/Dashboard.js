@@ -19,7 +19,7 @@ class Dashboard extends React.Component {
   static contextType = Context;
   static defaultProps = {
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -64,6 +64,7 @@ class Dashboard extends React.Component {
             <InitialStats />
           </div>
           <hr />
+          <h3 className='quizHeader'>Quizzes</h3>
           <div className='btn-row'>
             <button
               type='button'
@@ -80,7 +81,6 @@ class Dashboard extends React.Component {
               Completed
             </button>
           </div>
-          <h3 className='quizHeader'>Quizzes</h3>
           <div className='quizArea'>
             <div className='quizContents'>
               <QuizContainer quizView={this.state.quizView} />
