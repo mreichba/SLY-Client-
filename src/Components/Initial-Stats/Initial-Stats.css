@@ -13,27 +13,31 @@
   flex-direction: column;
   justify-content: center;
   justify-content: space-around;
-  border: 1px solid hotpink;
+  border: 2px solid hotpink;
   border-radius: 100%;
   width: 150px;
   height: 150px;
   margin: 10px;
-  padding: 10px;
+  padding: 30px;
   color: white;
   background-color: rgb(28, 11, 56);
   box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+  font-size: 18px;
 }
 
 .initialUL .ans {
   color: rgb(157, 14, 210);
+  font-weight: bold;
 }
 
 .initialUL .desc {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
+  /* margin-bottom: 0px; */
+
 }
 
 .initialUL h5 {
   max-width: 70%;
   padding-top: 20px;
-  margin: 0 auto 0;
+  margin: 20px auto 0;
 }

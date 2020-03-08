@@ -19,8 +19,8 @@
   justify-content: space-around;
   border: 1px solid hotpink;
   border-radius: 100%;
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
   margin: 0 auto 40px;
   padding: 10px;
   color: white;
@@ -36,11 +36,13 @@
 .statsPercent p {
   font-weight: normal;
   font-size: 18px;
+  margin: 0;
 }
 
 .statsPercent h3 {
   font-size: 24px;
   color: rgb(157,14,210);
+  margin: 0;
 }
 
 
