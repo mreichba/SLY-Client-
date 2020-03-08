@@ -23,8 +23,13 @@
   box-shadow:  0px 11px 21px -8px rgba(0, 0, 0, 0.5);
 }
 
-.initialUL p {
+.initialUL .ans {
   color: rgb(157,14,210);
+}
+
+.initialUL h5 {
+  max-width: 70%;
+  margin: 0 auto 0;
 }
 
 
