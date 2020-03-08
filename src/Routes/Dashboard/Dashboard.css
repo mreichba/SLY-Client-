@@ -1,10 +1,10 @@
-.dash-header{
+.dash-header {
   margin-bottom: 20px;
   font-family: 'Galada', cursive;
   font-size: 50px;
 }
 
-.dash-welcome{
+.dash-welcome {
   margin-bottom: 50px;
   font-size: 20px;
 }
@@ -13,14 +13,26 @@
   position: fixed;
   right: 10px;
   top: 50%;
-  
 }
 
-.dash-slide{
-  background-color: rgb(28, 11, 56);
-  color: white;
-  border: hotpink 1px solid;
-  padding: 2px;
+.btn-row {
+  width: 30%;
+  margin: auto auto;
+}
+
+.quiz-btn,
+.quiz-btn2 {
+  background: rgb(28, 11, 56);
+  border-color: hotpink;
+  padding: 5px;
+  color: #fff;
+  border-radius: 5px;
+  float: left;
+  display: block;
+}
+
+.quiz-btn2 {
+  float: right;
 }
 
 .dash-prac-button {
@@ -39,14 +51,14 @@
   color: white;
 }
 
-.statsArea{
+.statsArea {
   height: auto;
   /* width: 90%; */
   margin: 4%;
   margin-top: 10px;
 }
 
-.quizArea{
+.quizArea {
   height: auto;
   /* overflow: scroll; */
   /* width: 90%; */
@@ -56,10 +68,11 @@
 
 /* ::-webkit-scrollbar { width: 0px; background: transparent; } */
 
-.quizHeader{
+.quizHeader {
   /* width: 100%; */
   margin: 0 auto 30px;
   font-size: 28px;
+  clear: both;
 }
 
 .quizContents {
@@ -71,18 +84,22 @@
 }
 
 hr {
-  background-color: rgb(28, 11, 56);
-  color: rgb(28, 11, 56);
+  border-color: rgb(28, 11, 56);
   width: 90%;
   margin: 4% auto 4%;
 }
 
 @media screen and (max-width: 820px) {
-  .statsArea{
+  .statsArea {
     width: 90%;
   }
 
-  .quizHeader{
+  .btn-row {
+    width: 90%;
+    margin: auto auto;
+  }
+
+  .quizHeader {
     /* margin: 0 auto 0; */
   }
 
@@ -90,9 +107,8 @@ hr {
     width: 90%;
   }
 
-  .quizArea{
+  .quizArea {
     height: auto;
     width: 90%;
   }
-
 }
