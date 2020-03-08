@@ -53,6 +53,11 @@ nav li a {
   color: white;
   text-decoration: none;
 }
+nav li a:hover {
+  color: rgb(161, 3, 11);
+  font-weight: bold;
+
+}
 
 .navLogo {
   height: 40px;

@@ -34,7 +34,7 @@ export default class InitialStats extends React.Component {
                 {Math.floor(
                   (this.state.userData.birthdayMatches /
                     this.state.userData.totalUsers) *
-                    100
+                  100
                 )}
                 % of users matched your answer.
               </p>
@@ -49,7 +49,7 @@ export default class InitialStats extends React.Component {
                 {Math.floor(
                   (this.state.userData.locationMatches /
                     this.state.userData.totalUsers) *
-                    100
+                  100
                 )}
                 % of users matched your answer.
               </p>
@@ -61,7 +61,7 @@ export default class InitialStats extends React.Component {
                 {Math.floor(
                   (this.state.userData.nationalityMatches /
                     this.state.userData.totalUsers) *
-                    100
+                  100
                 )}
                 % of users matched your answer.
               </p>
@@ -73,13 +73,13 @@ export default class InitialStats extends React.Component {
                 {Math.floor(
                   (this.state.userData.genderMatches /
                     this.state.userData.totalUsers) *
-                    100
+                  100
                 )}
                 % of users matched your answer.
               </p>
             </li>
             <li>
-              <h5>College Graduate</h5>
+              <h5>College</h5>
               <p className='ans'>
                 {this.state.userData.userData.college_graduate}
               </p>
@@ -87,7 +87,7 @@ export default class InitialStats extends React.Component {
                 {Math.floor(
                   (this.state.userData.collegeGradMatches /
                     this.state.userData.totalUsers) *
-                    100
+                  100
                 )}
                 % of users matched your answer.
               </p>
