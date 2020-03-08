@@ -44,8 +44,11 @@ export default class QuizStats extends React.Component {
             and {this.state.stats.matchingAnswers.length} users answered the
             same as you
           </p>
-          <h3 className='statsPercent'>Your answer is matched to {Math.floor(this.state.stats.matchingAnswers.length / this.state.stats.totalUserAnswers * 100)}% of other people</h3>
-          <Link to='/Dashboard'>Home</Link>
+          <div className='statsPercent'>
+            <h3>{Math.floor(this.state.stats.matchingAnswers.length / this.state.stats.totalUserAnswers * 100)}%</h3>
+            <p>of other people matched your answer</p>
+          </div>
+          <div className='homeLink'><Link to='/Dashboard'>Done</Link></div>
         </div>
       );
     }

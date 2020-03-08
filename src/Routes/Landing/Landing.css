@@ -1,11 +1,17 @@
 .landing_h1 {
   font-family: 'Galada', cursive;
   margin-bottom: 20px;
-  font-size: 40px;
+  font-size: 50px;
 }
 
-.accent{
-  color: rgb(88, 5, 88);
+.landingContainer {
+  border: 1px solid hotpink;
+  border-radius: 25px;
+  margin: 0 auto 0;
+  width: 500px;
+  color: white;
+  background-color: rgb(28, 11, 56);
+  ;
 }
 
 .landing_button {
@@ -25,10 +31,15 @@
 
 .mission {
   max-width: 500px;
-  margin: 0 auto 30px;
+  margin: 30px auto 30px;
   padding: 0 30px 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;  
 }
-
+.mission h2 {
+  font-size: 24px;
+}
 .accent{
   color: rgb(100, 4, 109);
 }
