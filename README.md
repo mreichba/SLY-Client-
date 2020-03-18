@@ -3,8 +3,8 @@
 Created by: Anthony Bostic, Stephen Schab, Mason Reichbauer, and Krystal Noweski
 ---
 ## Repo & Live Links
-[Live Server](https://someone-like-you.now.sh/)
-[Client Repo](https://github.com/thinkful-ei-iguana/MASK-SLY-client)
+[Live Server](https://someone-like-you.now.sh/) <br />
+[Client Repo](https://github.com/thinkful-ei-iguana/MASK-SLY-client) <br />
 [Server Repo](https://github.com/thinkful-ei-iguana/MASK-SLY-API)
 
 
