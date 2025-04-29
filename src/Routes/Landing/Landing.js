@@ -13,9 +13,8 @@ export default class Landing extends React.Component {
         </p>
         </div>
         <p className='mission'>
-          <h2>**Demo Credentials**</h2> <br />
-          User Name: Test <br />
-          Password: Password1!
+          <h2>**Demo Credentials**</h2>
+          Simply create an account to demo, you do not need to use a real email (Ex: john.smith@test.com)
         </p>
         <button className='landing_button'><Link to='/Register'>Create Account</Link></button>
       </div>
