@@ -78,16 +78,21 @@ const QuizService = {
     );
   },
   // api call that returns all the quizes the currently logged in user HAS completed
-  getSortedQuizzes(status, auth) {
+  getSortedQuizzes(status, auth) {  
     return fetch(`${config.API_ENDPOINT}/questions/quizStatus/${status}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
         Authorization: `Bearer ${auth}`
       }
-    }).then(res =>
-      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
-    );
+    })
+      .then(res =>
+        !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+      )
+      .catch(err => {
+        console.error(`❌ Failed to load "${status}" quizzes:`, err);
+        return [];
+      });
   },
   // submits user's quiz answer to the db
   postAnswer(question_id, answer_id, auth) {
