@@ -13,7 +13,8 @@ class Dashboard extends React.Component {
     this.state = {
       open: false,
       isLoading: true,
-      quizView: 'incomplete'
+      quizView: 'incomplete',
+      refreshKey: Date.now()
     };
   }
   static contextType = Context;
@@ -31,6 +32,7 @@ class Dashboard extends React.Component {
       TokenService.getAuthToken()
     );
     this.context.setQuizStatus(status);
+    this.refreshQuizzes(); // trigger new fetch
     this.setState({ isLoading: false });
   }
 
@@ -39,6 +41,11 @@ class Dashboard extends React.Component {
       ? this.props.history.push('/Login')
       : '';
   }
+
+  //gives up to date quiz views as without this they lag and may not show without manual refresh
+  refreshQuizzes = () => {
+    this.setState({ refreshKey: Date.now() });
+  };
 
   // while the on mount api call is processing it renders loading
   Loader = () => {
@@ -83,7 +90,10 @@ class Dashboard extends React.Component {
           </div>
           <div className='quizArea'>
             <div className='quizContents'>
-              <QuizContainer quizView={this.state.quizView} />
+              <QuizContainer 
+                quizView={this.state.quizView}
+                refreshKey={this.state.refreshKey}
+              />
             </div>
           </div>
         </div>

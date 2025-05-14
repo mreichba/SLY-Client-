@@ -13,9 +13,9 @@
     "react-scripts": "^3.4.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "prebuild": "set CI=true react-scripts test --colors",
-    "build": "react-scripts build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
